@@ -32,7 +32,7 @@ publishDir = "docs"
 	highlight_css  = ""
 
 	[params.palette]
-    	primary = "teal"
+    	primary = "light-blue"
     	accent  = "orange"
 
     [params.font]
