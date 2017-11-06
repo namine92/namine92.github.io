@@ -3,7 +3,7 @@
         {
             "name":"Android SDK",
             "path":"/android",
-            "version":"1.8.5",
+            "version":"1.8.7",
             "logo":"/logos/android-logo.svg",
             "menu": [
                 {
@@ -63,7 +63,7 @@
         {
             "name":"CMS",
             "path":"/cms",
-            "version":"2.2.3",
+            "version":"3.0",
             "logo":"/logos/cms.png",
             "menu": []
         }
