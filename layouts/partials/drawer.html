@@ -37,7 +37,7 @@
 
         {{ if isset $.Site.Params "author" }}
         <hr>
-        <span class="section">The author</span>
+        <span class="section">Useful links</span>
         
         <ul>
           {{ with $.Site.Social.twitter }}
@@ -63,6 +63,11 @@
             </a>
           </li>
           {{ end }}
+          <li>
+            <a href="https://status.mapsindoors.com" title="MapsIndoors System Status">
+              System Status
+            </a>
+          </li>
         </ul>
         {{ end }}
       </div>

@@ -1,0 +1,10 @@
+before_script
+  - brew install hugo
+
+stages:
+  - build
+
+prepare:
+  stage: build
+  script:
+    - hugo

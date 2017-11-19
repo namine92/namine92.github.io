@@ -17,6 +17,10 @@
                 {
                     "name":"Reference Docs",
                     "path":"https://app.mapsindoors.com/mapsindoors/reference/android/index.html"
+                },
+                {
+                    "name":"Changelog",
+                    "path":"/android/changelog"
                 }
             ]
         },
@@ -37,6 +41,10 @@
                 {
                     "name":"Reference Docs",
                     "path":"https://app.mapsindoors.com/mapsindoors/reference/ios/index.html"
+                },
+                {
+                    "name":"Changelog",
+                    "path":"/ios/changelog"
                 }
             ]
         },
@@ -57,6 +65,10 @@
                 {
                     "name":"Reference Docs",
                     "path":"/web/reference"
+                },
+                {
+                    "name":"Changelog",
+                    "path":"/web/changelog"
                 }
             ]
         },
@@ -65,7 +77,16 @@
             "path":"/cms",
             "version":"3.0",
             "logo":"/logos/cms.png",
-            "menu": []
+            "menu": [
+                {
+                    "name":"Guide",
+                    "path":"/cms"
+                },
+                {
+                    "name":"Changelog",
+                    "path":"/cms/changelog"
+                }
+            ]
         }
     ]
 }
