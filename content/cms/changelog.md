@@ -3,6 +3,7 @@
 title: Changelog
 
 ---
+# Changelog
 
 ## [3.1.1] - 16-11-2017
 

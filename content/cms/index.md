@@ -10,6 +10,10 @@ There are 2 roles in the system:
 
 **Admin** - Administrators also have access to types, categories and users management, network visualisation and app configuration.
 
+**Regarding the transition to MapsIndoors CMS 3.0**
+If you are using the CMS to manage push messaging or beacons you have to continue using the previous CMS version. The same applies in the event of having unpublished changes in your CMS. Please publish them in the previous version before starting to use the new version. Editors roles of the previous CMS version will need to have their roles updated by an admin, on the "users" page before they can access the new CMS. [Click here to access the previous CMS version](https://cms-legacy.mapsindoors.com/)
+.
+
 **Logging In**
 
 Visit [cms.mapsindoors.com](https://cms.mapsindoors.com/) 
