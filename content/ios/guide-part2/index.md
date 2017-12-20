@@ -90,9 +90,9 @@ func onRouteResultReady(_ route: MPRoute!) {
 
 ## Using Custom Providers
 
- It is possible to setup MapsIndoors with locations, venues or routing from your own backend. E.g. to use your own locations backend, let your custom provider conform to the MPLocationsProvider protocol (or make a subclass of the interface of same name):
+It is possible to setup MapsIndoors with locations, venues or routing from your own backend. E.g. to use your own locations backend, let your custom provider conform to the MPLocationsProvider protocol (or make a subclass of the interface of same name):
 
- ```swift
+```swift
 
  class MyCustomLocationsProvider : MPLocationsProvider {
 
@@ -112,9 +112,9 @@ func onRouteResultReady(_ route: MPRoute!) {
 
  }
 
- ```
+```
 
- In cunjunction with your setup code, make `MPMapControl` use your provider.
+In cunjunction with your setup code, make `MPMapControl` use your provider.
 
  ```swift
  let myProvider = MyCustomLocationsProvider()
@@ -127,7 +127,7 @@ func onRouteResultReady(_ route: MPRoute!) {
  // Use your solution id, site id and the location provider that you instantiated
   myMapControl.setupMap(with: "YOUR_SOLUTION_ID", site: "YOUR_SITE_ID", locations: myProvider, venues: nil, routing: nil)
   ```
- ## Route restrictions
+## Route restrictions
  Add a restriction to the route by setting the avoid argument. Avoid stairs on the route using the following restriction parameter:
 
  ```swift
@@ -252,3 +252,25 @@ Once a route result is received, you might want to render the route on a map. Th
  directionRenderer.nextRouteLegButton.addTarget(self, action: #selector(showNextRouteLeg), for: UIControlEventTouchUpInside)
  directionRenderer.previousRouteLegButton.addTarget(self, action: #selector(showPreviousRouteLeg), for: UIControlEventTouchUpInside)
  ```
+
+## Determining and setting a user location
+MapsIndoors can show the user position, but to do that it needs to know the user’s position. This can either be set manually by the app or using a position provider. To set it manually, simply call the map control directly with a location and floor, for this case we are going to set it as the venue position:
+
+ ```swift
+let position = MPPositionIndicator.init(point: MPPoint.init(lat: 57.0, lon: 10.0, zValue: 1), andName: "My location");
+myMapControl.currentPosition = position
+```
+A position provider is normally easier to use for real time positioning. To create a position provider make a class that implements the PositionProvider interface and add it to your MapControl like this:
+
+### Using a positioning provider
+The GPS provider is part of the demo app: GPSPositionProvider.
+
+ ```swift
+//Add a position provider in able to track the user's position.
+gpsProvider = GPSPositionProvider(MapsIndoors.getSolutionId())
+//Telling map control about our provider
+myMapControl.addPositionProvider(gpsProvider)
+gpsProvider.startPositioning()
+```
+
+To know more about this subject, please read this [Introduction to the field of Indoor Positioning](/introductions/indoor-positioning).
