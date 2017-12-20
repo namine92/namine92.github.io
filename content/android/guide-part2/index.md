@@ -140,3 +140,5 @@ gpsProvider = new GPSPositionProvider(this.getApplicationContext());
 mMapControl.addPositionProvider(gpsProvider);
 mMapControl.startPositioning();
 ```
+
+To know more about this subject, please read this [Introduction to the field of Indoor Positioning](/introductions/indoor-positioning).
