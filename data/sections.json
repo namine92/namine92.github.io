@@ -2,8 +2,10 @@
     "data":[
         {
             "name":"Android SDK",
+            "group":"android",
             "path":"/android",
             "version":"1.8.7",
+            "primary":true, 
             "logo":"/logos/android-logo.svg",
             "menu": [
                 {
@@ -26,17 +28,33 @@
         },
         {
             "name":"iOS SDK",
-            "path":"/ios",
-            "version":"1.11.1",
+            "group":"ios",
+            "path":"/ios/v2",
+            "version":"2.0.0-beta",
+            "primary":false,
             "logo":"/logos/apple-logo.svg",
             "menu": [
                 {
                     "name":"Getting Started",
-                    "path":"/ios"
+                    "path":"/v2"
+                }
+            ]
+        },
+        {
+            "name":"iOS SDK",
+            "group":"ios",
+            "path":"/ios/v1",
+            "version":"1.11.1",
+            "primary":true,
+            "logo":"/logos/apple-logo.svg",
+            "menu": [
+                {
+                    "name":"Getting Started",
+                    "path":"/ios/v1"
                 },
                 {
                     "name":"Next Steps",
-                    "path":"/ios/guide-part2"
+                    "path":"/ios/v1/guide-part2"
                 },
                 {
                     "name":"Reference Docs",
@@ -44,14 +62,16 @@
                 },
                 {
                     "name":"Changelog",
-                    "path":"/ios/changelog"
+                    "path":"/ios/v1/changelog"
                 }
             ]
         },
         {
             "name":"Web SDK",
+            "group":"web",
             "path":"/web",
             "version":"1.4.1",
+            "primary":true,
             "logo":"/logos/web-logo.svg",
             "menu": [
                 {
@@ -76,6 +96,7 @@
             "name":"CMS",
             "path":"/cms",
             "version":"3.0",
+            "primary":true,
             "logo":"/logos/cms.png",
             "menu": [
                 {

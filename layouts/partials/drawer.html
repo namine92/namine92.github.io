@@ -3,15 +3,15 @@
   {{ .Scratch.Set "CurrentPage" . }}
   {{ range .Site.Data.sections.data }}
     {{ $isHome := (eq $.Page.Title $.Site.Title) }}
-    {{ $isCurrentSection := (in $.Page.Permalink .path) }}
-    {{ if or $isCurrentSection $isHome }}
+    {{ $isCurrentSection := (or (in $.Page.Permalink .path) (in $.Page.Permalink .group)) }}
+    {{ if or $isCurrentSection (and $isHome .primary) }}
     <a href="{{ .path }}" class="project">
       <div class="banner">
         <div class="logo">
           <img src="{{ $.Site.BaseURL }}{{ .logo }}" style="padding:10px">
         </div>
         <div class="name">
-          <strong>{{ .name }} <span class="version">{{ .version }}</span></strong>
+          <strong>{{ .name }} <br /><span class="version">{{ .version }}</span></strong>
           {{ with .Scratch.Get "repo_id" }}
             <br>
             {{ . }}

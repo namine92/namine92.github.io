@@ -1,0 +1,1 @@
+{{ range .Site.Data.sections.data }}{{ if in $.Page.Permalink .path }}{{.version}}{{ end }}{{ end }}
