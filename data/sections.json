@@ -30,13 +30,17 @@
             "name":"iOS SDK",
             "group":"ios",
             "path":"/ios/v2",
-            "version":"2.0.0-beta",
+            "version":"2.0.0-alpha39",
             "primary":false,
             "logo":"/logos/apple-logo.svg",
             "menu": [
                 {
                     "name":"Getting Started",
-                    "path":"/v2"
+                    "path":"/ios/v2"
+                },
+                {
+                    "name":"Guides",
+                    "path":"/ios/v2/guides"
                 }
             ]
         },

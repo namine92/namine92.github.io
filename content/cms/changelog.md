@@ -1,8 +1,63 @@
 ---
-
 title: Changelog
-
 ---
+
+## [3.4.0] - 20-02-2018
+
+### Added
+- Select all/deselect all, locations table.
+- Graph bounds and editing.
+
+### Changed
+- Refactored locations list.
+- Improved ordering of locations.
+- Improved database performance greatly improving system responsiveness when loading many locations.
+- Ordered types by viewdistance.
+
+### Fixed
+- In some situations custom fields on locations would not save correctly.
+- Error message when trying to add an existing user.
+
+## [3.3.1] - 19-01-2018
+
+### Added
+
+### Changed
+
+### Fixed
+- Deleting locations now works.
+
+## [3.3.0] - 11-12-2017
+
+### Added
+- Venue bounds, network visualiser.
+- Edit venue bounds.
+- Remember last venue (until changing solution).
+- Create new venue.
+- Delete venue.
+- Toggle labels for locations map.
+- Solution types.
+- Solution expiration date.
+
+### Changed
+- Moved from Angular Http to Angular HttpClient.
+- Buildings moved to separate page.
+
+### Fixed
+
+## [3.2.0] - 29-11-2017
+
+### Added
+- Label rotation and type for export map.
+- Icon size for export map.
+- Master data (venue, buildings) page.
+- Tooltip for type and image in edit panel for locations.
+
+### Changed
+- Tighter display settings page allowing more types to be shown at the time.
+
+### Fixed
+- Styling issues related to toolbars.
 
 ## [3.1.1] - 16-11-2017
 
@@ -15,8 +70,8 @@ title: Changelog
 - Collapsing the sidebar updates the map-size, preventing grey areas with no tiles.
 - Fixed an error when trying to save a location with no name set for one or more languages.
 
->>>>>>> develop
 ## [3.1.0] - 14-11-2017
+
 ### Added
 - Zoom level indcator.
 - Modified and modified by to the location list.
@@ -32,6 +87,7 @@ title: Changelog
 - Login issues when using the email/password form.
 
 ## [3.0.0] - 06-11-2017
+
 ### Added
 - Customer and partners page.
 - App configurations page.
