@@ -5,9 +5,9 @@ title: MapsIndoors for iOS - Getting Started
 
 ## Basic Example
 
-You will find in the [link](https://github.com/namine92/mapsIndooriOSTut) an up and running project that contains the minimum code to start a MapsIndoors project.
+For basic examples of a MapsIndoors implementation, clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V2) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
 
-You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more features will be explained in the [guides](/ios/v2/guides).
+You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the [guides](/ios/v2/guides).
 
 ## Setup CocoaPods
 
@@ -31,7 +31,7 @@ end
 * Open a terminal and go to the directory containing the Podfile:
 * `cd <path-to-project>`
 * Run the `pod install` command. This will install the APIs specified in the Podfile, along with any dependencies they may have.
-* Close Xcode, and then open (double-click) your project's .xcworkspace file to launch Xcode. From this time onwards, you must use the .xcworkspace file to open the project.
+* Close Xcode, and then open (double-click) your project's *.xcworkspace* file to launch Xcode. From this time onwards, you must use the *.xcworkspace* file to open the project.
 
 Add your credentials to your `AppDelegate.swift` as follows:
 
@@ -45,15 +45,13 @@ Add the following to your `application(_:didFinishLaunchingWithOptions:)` method
 ```
 GMSServices.provideAPIKey(      "YOUR_GOOGLE_API_KEY")
 MapsIndoors.provideAPIKey(      "YOUR_MAPSINDOORS_API_KEY", 
-                googleAPIKey:   "YOUR_GOOGLE_API_KEY", 
-                contentKey:     "YOUR_MAPSINDOORS_CONTENT_KEY")
+            googleAPIKey:       "YOUR_GOOGLE_API_KEY")
 ```
 
 Replace:
 
 * `YOUR_GOOGLE_API_KEY` with your Google API key
-* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. Some MapsIndoors solutions is deployed with open APIs, in this case, you may pass `nil` as the parameter value
-* `YOUR_MAPSINDOORS_CONTENT_KEY` with your Google API key
+* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. (In version 1, this key was known as your Solution Id)
 
 ## Setup a Google Map with MapsIndoors
 
@@ -77,13 +75,12 @@ If needed, it is possible to bundle MapsIndoors content to make your app work be
 In your app targets build phases, add a "Run Script" build phase containing the following command:
 
 ```
-${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --content-key=YOUR_MAPSINDOORS_CONTENT_KEY --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
+${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
 ```
 
 Replace:
 
-* `YOUR_MAPSINDOORS_CONTENT_KEY` with your own MapsIndoors content key
-* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. Some MapsIndoors solutions is deployed with open APIs, in this case, you may remove this input parameter entirely
+* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. 
 * `en` with any one of the languages that your MapsIndoors solution supports (Two letter ISO-639-1 language code). If you only have one language deployed you may remove this input parameter entirely
 
 Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to check the "Run script only when installing" option. This means that content will only be bundled when archiving for e.g. a release.
