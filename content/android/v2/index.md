@@ -5,7 +5,7 @@ title: MapsIndoors for Android - Getting Started
 
 ## Basic Example
 
-You will find in the [link](https://github.com/namine92/mapsIndooriOSTut) a repo that contains the minimum code to start a MapsIndoors project.
+You will find in the [link](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo) a repo that contains the minimum code to start a MapsIndoors project.
 
 You can also follow the steps below to start your app from scratch or to enhance the Basic Examples, more features will be explained in the [guides](/android/v2/guides).
 
@@ -13,7 +13,7 @@ You can also follow the steps below to start your app from scratch or to enhance
 
 Add the MapsIndoors SDK as a dependency to your project. The AAR for the MapsIndoors SDK contains both Java classes, SDK resources and AndroidManifest.xml template which gets merged into your application’s AndroidManifest.xml during build process. Add or merge in the following to your app’s build gradle file (usually called build.gradle).
 
-First, make sure that the minimum Android SDK version is 21 or above:
+Make sure that the minimum Android SDK version is 21 or above:
 
 ```groovy
 android {
@@ -24,7 +24,7 @@ android {
 }
 ```
 
-Secondly, MapsIndoors rely on Java 8 features, so you must add the following compile options, also in *android* section of your *build.gradle* file:
+MapsIndoors rely on Java 8 features, so you must add the following compile options, also in *android* section of your *build.gradle* file:
 
 ```groovy
 android {
@@ -36,10 +36,11 @@ android {
 }
 ```
 
-Finally, add the following dependencies and the MapsIndoors maven repository:
+Add the following dependencies and the MapsIndoors maven repository:
 
 ```groovy
 dependencies {
+    ...
     implementation 'com.android.support:support-v4:27.1.0'
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
     implementation 'com.google.code.gson:gson:2.8.2'
@@ -52,37 +53,65 @@ repositories{
 }
 ```
 
+Sync your project with gradle files.
 
+## Setup Google Maps
+
+Learn how to setup Google Maps on Android in this [Getting Started Guide](https://developers.google.com/maps/documentation/android-api/start).
 
 ## Setup a Google Map with MapsIndoors
 
-Use the `MPMapControl` class to set up a Google map with MapsPeople venues, buildings & locations. Place the following code in the `viewDidLoad` method in your view controller displaying the Google map.
+Place the following inititalisation code in the `onCreate` method in the activity that should display the Google map:
 
-```
-// Place the map above the demo-building
-let camera = GMSCameraPosition.camera(withLatitude: 57.08585, longitude: 9.95751, zoom: 17)
-// Initialise the Google map
-mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-view = mapView
-let myMapControl = MPMapControl.init(map: mapView)!
+```java
+MapsIndoors.initialize(
+  getApplicationContext(),
+  "YOUR_MAPSINDOORS_API_KEY",
+  "YOUR_GOOGLE_MAPS_API_KEY"
+);
 ```
 
-Head to the [guides](/ios/v2/guides) to learn about searching, getting directions, display settings and more.
+In your `onMapReady` callback function, use the `MapControl` class to set up a Google map with MapsIndoors venues, buildings & locations:
+
+```java
+// Create a new MapControl instance
+myMapControl = new MapControl( getApplicationContext(), mapFragment, mGoogleMap );
+
+// Initialize MapControl to get the locations on the map, etc.
+myMapControl.init( errorCode -> {
+  if( errorCode == null ) {
+    runOnUiThread( () -> {
+      // Animate the camera to show the venue
+      mGoogleMap.animateCamera( CameraUpdateFactory.newLatLngZoom( new LatLng( 57.05813067, 9.95058065 ), 19f ) );
+    });
+  }
+});
+```
+
+Head to the [guides](/android/v2/guides) to learn about event handling, searching, getting directions, display settings and more.
 
 ## Download and Bundle Offline Content
 
 If needed, it is possible to bundle MapsIndoors content to make your app work better in offline or poor network conditions. (Please note that while MapsIndoors content can be used offline, Google Maps does not provide offline features. Outdoor wayfinding, google places searches will be unavailable and the surrounding map may be unavailable unless it has been cached.)
 
-In your app targets build phases, add a "Run Script" build phase containing the following command:
+In your */res/values* folder, create a file named `mapsindoors_api.xml` with the following content:
 
-```
-${SRCROOT}/Pods/MapsIndoors/Scripts/derive_ressources.sh --content-key=YOUR_MAPSINDOORS_CONTENT_KEY --api-key=YOUR_MAPSINDOORS_API_KEY --language=en
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="mapsindoors_api_key" translatable="false">YOUR_MAPSINDOORS_API_KEY</string>
+</resources>
 ```
 
 Replace:
 
-* `YOUR_MAPSINDOORS_CONTENT_KEY` with your own MapsIndoors content key
-* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key. Some MapsIndoors solutions is deployed with open APIs, in this case, you may remove this input parameter entirely
-* `en` with any one of the languages that your MapsIndoors solution supports (Two letter ISO-639-1 language code). If you only have one language deployed you may remove this input parameter entirely
+* `YOUR_MAPSINDOORS_API_KEY` with your MapsIndoors API key.
 
-Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to check the "Run script only when installing" option. This means that content will only be bundled when archiving for e.g. a release.
+In your apps build gradle file, add these two lines:
+
+```
+apply from: 'https://raw.githubusercontent.com/MapsIndoors/MapsIndoorsAndroid/SDK_V2/scripts/gradle/MapsIndoorsOfflineDataSync.gradle'
+preBuild.dependsOn fetchData
+```
+
+Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to comment out the script dependency.

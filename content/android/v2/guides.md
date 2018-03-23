@@ -39,10 +39,12 @@ locations.getLocationsUsing(queryObj) { (locationData, error) in
     if error == nil {
         self.mapControl?.searchResult = locationData!.list
         let firstLocation = locationData?.list.first as! MPLocation
-        self.mapControl?.currentFloor = firstLocation.floor         // You are not guaranteed that the visible floor contains any search results, so that is why we change floor
+        self.mapControl?.currentFloor = firstLocation.floor         
     }
 }
 ```
+
+Please note that you are not guaranteed that the visible floor contains any search results, so that is why we change floor in the above example.
 
 ## Getting Directions and Displaying a Route Result on a Map
 
