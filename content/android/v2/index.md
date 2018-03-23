@@ -109,7 +109,7 @@ Replace:
 
 In your apps build gradle file, add these two lines:
 
-```
+```groovy
 apply from: 'https://raw.githubusercontent.com/MapsIndoors/MapsIndoorsAndroid/SDK_V2/scripts/gradle/MapsIndoorsOfflineDataSync.gradle'
 preBuild.dependsOn fetchData
 ```

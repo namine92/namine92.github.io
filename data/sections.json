@@ -30,7 +30,7 @@
             "name":"Android SDK",
             "group":"android",
             "path":"/android/v2",
-            "version":"2.0.0-beta1",
+            "version":"2.0.0-beta01",
             "primary":false, 
             "logo":"/logos/android-logo.svg",
             "menu": [

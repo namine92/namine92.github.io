@@ -16,11 +16,11 @@ You need to setup the Google Maps API in your project by following the steps in 
 * Android : You will need the [Google Maps Android API](https://developers.google.com/maps/documentation/android-api/start).
 * iOS : You will need the [Google Maps SDK for iOS](https://developers.google.com/maps/documentation/ios-sdk/start).
 
-Some Web Service APIs are needed also for the mapsIndoors SDK so make sure to enable them when getting your key :
+Some Web Service APIs are needed also for the MapsIndoors SDK so make sure to enable them when getting your key:
 
-* [Google Places API Web Service](https://developers.google.com/places/web-service/intro).
 * [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start).
 * [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start).
+* [Google Places API Web Service](https://developers.google.com/places/web-service/intro)
 
 ### Get a MapsIndoors Content Key and API Key
 
