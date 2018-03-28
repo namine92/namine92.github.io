@@ -30,7 +30,7 @@
             "name":"Android SDK",
             "group":"android",
             "path":"/android/v2",
-            "version":"2.0.0-beta01",
+            "version":"2.0.0-beta03",
             "primary":false, 
             "logo":"/logos/android-logo.svg",
             "menu": [
@@ -41,6 +41,10 @@
                 {
                     "name":"Guides",
                     "path":"/android/v2/guides"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"https://app.mapsindoors.com/mapsindoors/reference/android/v2/index.html"
                 },
                 {
                     "name":"Changelog",
@@ -63,6 +67,14 @@
                 {
                     "name":"Guides",
                     "path":"/ios/v2/guides"
+                },
+                {
+                    "name":"Tutorials",
+                    "path":"/ios/v2/tutorials"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html"
                 },
                 {
                     "name":"Changelog",

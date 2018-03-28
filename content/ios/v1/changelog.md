@@ -6,16 +6,16 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 <!---
  ## [Unreleased]
  -->
- ## [1.12.6] - 2018-03-13
- ### Fixed
- - Fixed issue with disappearing building graphics if the internal urls was invalid
- 
- ## [1.12.5] - 2018-01-15
- ### Fixed
- - Fixed issue causing blue dot to disappear in some cases
- 
- ## [1.12.4] - 2018-01-12
- ### Fixed
+## [1.12.6] - 2018-03-13
+### Fixed
+- Fixed issue with disappearing building graphics if the internal urls was invalid
+
+## [1.12.5] - 2018-01-15
+### Fixed
+- Fixed issue causing blue dot to disappear in some cases
+
+## [1.12.4] - 2018-01-12
+### Fixed
 - Fixed issue causing `MPVenueProvider` not to return any buildings once in a while
 - Fixed issue causing `MPDirectionsService` not to return proper callbacks
 - Fixed issues related to language code validation.
@@ -33,18 +33,18 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 - Prevent multiple calls to completionHandler from -[MapsIndoors fetchDataForOfflineUse:]
 - Calls to -[MPSolutionProvider getSolutionAsync:completionHandler:] while a call is already ongoing would fail to call completion handler.
 
- ### Added
- - Added a `MPRouteLeg.legType`  property
- - Added property queryMode to `MPLocationsQuery`, can be set to `MPLocationsQueryModeAutocomplete` or `MPLocationsQueryModeNormal` (default).
+### Added
+- Added a `MPRouteLeg.legType`  property
+- Added property queryMode to `MPLocationsQuery`, can be set to `MPLocationsQueryModeAutocomplete` or `MPLocationsQueryModeNormal` (default).
 
- ### Changed
- - Search algorithm improvement.
- - Internal works: Backend resolving improvements and SDK session handling
- - Improved the internal works of `[MPVenuesProvider getBuildingWithinBoundsAsync]`.
- - Internal refactoring.
- - Avoid auto-switching current building's floor if a non-empty search result is not visible on that new floor.
- - Internal refactoring.
- - Updated Google Maps SDK dependency.
+### Changed
+- Search algorithm improvement.
+- Internal works: Backend resolving improvements and SDK session handling
+- Improved the internal works of `[MPVenuesProvider getBuildingWithinBoundsAsync]`.
+- Internal refactoring.
+- Avoid auto-switching current building's floor if a non-empty search result is not visible on that new floor.
+- Internal refactoring.
+- Updated Google Maps SDK dependency.
 
 ## [1.12.3-beta1] - 2018-01-12
 ### Fixed
