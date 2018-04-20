@@ -2,6 +2,17 @@
 title: MapsIndoors for Web - Getting started
 
 ---
+
+This guide explains how to start using a MapsIndoors map in your HTML application. Make sure that you have read the [prerequisites](../#prerequisites).
+
+To benefit from the guides, you will need basic knowledge about:
+
+* JavaScript
+* HTML/CSS
+* Google Maps Javascript API V3
+
+You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#script-loading).
+
 ## Basic Example
 
 You will find in the [link](https://github.com/namine92/mapsIndoorwebTut) an up and running project that contains the minimum code to start a MapsIndoors project.
@@ -17,28 +28,38 @@ node app.js
 ```
 You can also follow the steps below to start your app from scratch or to enhance the Basic Example, more advanced feature will be explained in the [part 2](/web/guidepart2) of this tutorial with a demo app that gives a showcase of the mapsIndoors in a complete app that you can test also.
 
-## Script Loading
+## Setting up a map
 
-Include the following scripts in your document. MapsIndoors depend on jQuery and Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
+### Setup Your HTML
+
+Include the following scripts in your HTML document. MapsIndoors depend on jQuery and Google Maps API v3, so if it’s not present on script load, MapsIndoors will not be able to initialize.
+
 If you need to use a floor selector (most projects do), just add a css reference as in the sample. This will provide a basic CSS-layout for the floor selector.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
-<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-{{%product-version%}}.js?solutionId=MY_MAPSINDOORS_SOLUTION_ID"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY&callback=init" async defer></script>
+<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-{{%product-version%}}.js?solutionId=MY_MAPSINDOORS_API_KEY" async defer></script>
 // Load css for default floor selector
 <link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css" type="text/css" rel="stylesheet" />
 ```
 
-## Setting up a map
+Replace:
 
-This is an example of setting up a MapsIndoors enabled Google map. First, as always when setting up Google Maps, create a div with defined height and width.
+* `MY_GOOGLE_API_KEY` with your own Google api key
+* `MY_MAPSINDOORS_API_KEY` with your MapsIndoors api key (formerly known as a solution id)
+
+**Note:** This example is using the *deferred* loading of the scripts. You can also use the synchronous loading by removing the `async defer` attributes. If you do this, it is recommended to place the scripts just before the closing `</body>` tag.
+
+As always when setting up Google Maps, create a div with defined width and height.
 
 ```html
 <div id="map" style="width:600px;height:600px"></div>
 ```
 
-Then add the following script code somewhere on your HTML page.
+### Setup JavaScript
+
+Then add the following JavaScript code in a script tag in the top of your HTML page.
 
 ```javascript
 var myGoogleMap, myMapsIndoors;
@@ -58,9 +79,7 @@ var init = function () {
 
 };
 
-google.maps.event.addDomListener(window, 'load', init);
 ```
-
 
 ## Using Events
 
@@ -143,19 +162,7 @@ locationsService.getLocationDetails("SOME-MAPSINDOORS-ID").then(function (locati
    }, 5000);
 });
 ```
-## Using the mapsIndoors
 
-Constructor.
-
-```javascript
-var googleMap = new google.maps.Map(...);
-
-var mapsIndoors = new mapsindoors.MapsIndoors(
-   {
-      map: googleMap
-   }
-)
-```
 ## Using the Display rules
 
 Display rules use the following structure:
@@ -178,10 +185,10 @@ var mapsIndoors = new mapsindoors.MapsIndoors({map: googleMap});
 mapsIndoors.setDisplayRule("info", {from:16, icon:"http://myiconhost.com/info.png" });
 ```
 
-Display rules are based on POI/Location types. Every location has one type `propertylocation.properties.type`. A set of types is defined/used in the MapsIndoors CMS. The current list of types can be listed using the LocationService:
+Display rules are based on POI/Location types. Every location has one type property `location.properties.type`. A set of types is defined/used in the MapsIndoors CMS. The current list of types can be listed using the LocationsService:
 
 ```javascript
-var locations = new mapsindoors.LocationService();
+var locations = new mapsindoors.LocationsService();
 
 locations.getTypes().then(function(types) {
    // returns array of types with format { name:string, icon:string }
@@ -239,13 +246,6 @@ Set the Google map that needs to be MapsIndoors-enabled.
 
 ```javascript
 mapsIndoors.setMap(googleMap)
-```
-## Getting the map
-
-Returns the Google Maps object.
-
-```javascript
-mapsIndoors.getMap()
 ```
 
 ### Reset the style of the map

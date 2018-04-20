@@ -3,6 +3,15 @@ title: MapsIndoors for Android - Getting Started
 
 ---
 
+This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the [prerequisites](../../#prerequisites).
+
+To benefit from the guides, you will need basic knowledge about:
+
+* Android Development
+* Google Maps Android API
+
+You can get started in two ways, either by reviewing and modifying the [basic example](#basic-example) or do the [clean setup](#setup-mapsindoors).
+
 ## Basic Example
 
 You will find in the [link](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo) a repo that contains the minimum code to start a MapsIndoors project.

@@ -3,9 +3,18 @@ title: MapsIndoors for iOS - Getting Started
 
 ---
 
-## Basic Example
+This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the [prerequisites](../../#prerequisites).
 
-For basic examples of a MapsIndoors implementation, run `pod try MapsIndoors` (see below for setting up CocoaPods or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V2)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
+To benefit from the guides, you will need basic knowledge about:
+
+* iOS Development
+* Google Maps iOS SDK
+
+You can get started in two ways, either by reviewing and modifying the [basic examples](#basic-examples) or do the [clean setup](#setup-cocoapods).
+
+## Basic Examples
+
+For simple examples of MapsIndoors implementations, run `pod try MapsIndoors` (see below for setting up CocoaPods or just clone [this repository](https://github.com/MapsIndoors/MapsIndoorsIOS/tree/SDK_V2)) and run the XCode Scheme called *Demos*. The code for these samples are to find in the */Example/DemoSamples* folder.
 
 You can also follow the steps below to start your app from scratch or to enhance the basic examples, more features will be explained in the [guides](/ios/v2/guides).
 

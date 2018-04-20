@@ -112,7 +112,7 @@
             "name":"Web SDK",
             "group":"web",
             "path":"/web",
-            "version":"1.4.1",
+            "version":"1.4.3",
             "primary":true,
             "logo":"/logos/web-logo.svg",
             "menu": [
