@@ -5,7 +5,7 @@
             "group":"android",
             "path":"/android/v1",
             "version":"1.8.7",
-            "primary":true, 
+            "primary":false, 
             "logo":"/logos/android-logo.svg",
             "menu": [
                 {
@@ -30,8 +30,8 @@
             "name":"Android SDK",
             "group":"android",
             "path":"/android/v2",
-            "version":"2.0.0-beta03",
-            "primary":false, 
+            "version":"2.0.0-beta08",
+            "primary":true, 
             "logo":"/logos/android-logo.svg",
             "menu": [
                 {
@@ -56,8 +56,8 @@
             "name":"iOS SDK",
             "group":"ios",
             "path":"/ios/v2",
-            "version":"2.0.0-beta12",
-            "primary":false,
+            "version":"2.0.0",
+            "primary":true,
             "logo":"/logos/apple-logo.svg",
             "menu": [
                 {
@@ -87,7 +87,7 @@
             "group":"ios",
             "path":"/ios/v1",
             "version":"1.11.1",
-            "primary":true,
+            "primary":false,
             "logo":"/logos/apple-logo.svg",
             "menu": [
                 {
@@ -137,7 +137,7 @@
         {
             "name":"CMS",
             "path":"/cms",
-            "version":"3.0",
+            "version":"3.5",
             "primary":true,
             "logo":"/logos/cms.png",
             "menu": [
