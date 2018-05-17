@@ -1,10 +1,10 @@
 pushd .
 cd content/ios/v2
-git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git SDK_V2 CHANGELOG.md | tar -x
+git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git master CHANGELOG.md | tar -x
 popd
 pushd .
 cd content/ios/v1
-git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git develop CHANGELOG.md | tar -x
+git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git maintenance/sdk_v1 CHANGELOG.md | tar -x
 popd
 pushd .
 cd content/web
