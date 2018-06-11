@@ -39,7 +39,7 @@ If you need to use a floor selector (most projects do), just add a css reference
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY&callback=init" async defer></script>
-<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-{{%product-version%}}.js?solutionId=MY_MAPSINDOORS_API_KEY" async defer></script>
+<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-{{%product-version%}}.min.js?solutionId=MY_MAPSINDOORS_API_KEY" async defer></script>
 // Load css for default floor selector
 <link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css" type="text/css" rel="stylesheet" />
 ```
