@@ -94,6 +94,6 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     self.dismiss(animated: true, completion: nil)
 }
 ```
- In [Part 2](searchsearchmapcontroller) we will create the map view controller that displays the blue dot. 
+ In [Part 2](../searchsearchmapcontroller) we will create the map view controller that displays the blue dot. 
 
 [See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Search/MySearchController.swift)

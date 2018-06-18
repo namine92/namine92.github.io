@@ -2,7 +2,7 @@
 title: Show the Blue Dot with MapsIndoors - Part 2
 ---
 
-This is part 2 of the tutorial of managing a blue dot on the map. [In Part 1 we created the position provider](showmylocationmypositionprovider). Now we will create a view controller displaying a map that shows the users (mock) location.
+This is part 2 of the tutorial of managing a blue dot on the map. [In Part 1 we created the position provider](../showmylocationmypositionprovider). Now we will create a view controller displaying a map that shows the users (mock) location.
 
 Create a class `ShowMyLocationController` that inherits from `UIViewController`.
 ```

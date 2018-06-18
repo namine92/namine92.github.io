@@ -17,6 +17,10 @@
                     "path":"/android/v2/guides"
                 },
                 {
+                    "name":"Tutorials",
+                    "path":"/android/v2/tutorials"
+                },
+                {
                     "name":"Reference Docs",
                     "path":"https://app.mapsindoors.com/mapsindoors/reference/android/v2/index.html"
                 },
