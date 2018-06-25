@@ -1,4 +1,4 @@
-before_script
+before_script:
   - brew install hugo
 
 stages:
