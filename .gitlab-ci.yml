@@ -1,5 +1,5 @@
 before_script:
-  - snap install hugo
+  - apt-get install hugo
 
 stages:
   - build
