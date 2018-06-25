@@ -1,5 +1,5 @@
 before_script:
-  - apt-get install hugo
+  - brew install hugo
 
 stages:
   - build
