@@ -1,5 +1,5 @@
 before_script:
-  - brew install hugo
+  - snap install hugo
 
 stages:
   - build
