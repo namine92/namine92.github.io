@@ -3,9 +3,39 @@
         {
             "name":"Android SDK",
             "group":"android",
-            "path":"/android/v1",
-            "version":"1.8.7",
+            "path":"/android/v2",
+            "version":"2.0.0",
             "primary":true, 
+            "logo":"/logos/android-logo.svg",
+            "menu": [
+                {
+                    "name":"Getting Started",
+                    "path":"/android/v2"
+                },
+                {
+                    "name":"Guides",
+                    "path":"/android/v2/guides"
+                },
+                {
+                    "name":"Tutorials",
+                    "path":"/android/v2/tutorials"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"https://app.mapsindoors.com/mapsindoors/reference/android/v2/index.html"
+                },
+                {
+                    "name":"Changelog",
+                    "path":"/android/v2/changelog"
+                }
+            ]
+        },
+        {
+            "name":"Android SDK",
+            "group":"android",
+            "path":"/android/v1",
+            "version":"1.8.8",
+            "primary":false, 
             "logo":"/logos/android-logo.svg",
             "menu": [
                 {
@@ -27,33 +57,11 @@
             ]
         },
         {
-            "name":"Android SDK",
-            "group":"android",
-            "path":"/android/v2",
-            "version":"2.0.0-beta1",
-            "primary":false, 
-            "logo":"/logos/android-logo.svg",
-            "menu": [
-                {
-                    "name":"Getting Started",
-                    "path":"/android/v2"
-                },
-                {
-                    "name":"Guides",
-                    "path":"/android/v2/guides"
-                },
-                {
-                    "name":"Changelog",
-                    "path":"/android/v2/changelog"
-                }
-            ]
-        },
-        {
             "name":"iOS SDK",
             "group":"ios",
             "path":"/ios/v2",
-            "version":"2.0.0-beta12",
-            "primary":false,
+            "version":"2.0.1",
+            "primary":true,
             "logo":"/logos/apple-logo.svg",
             "menu": [
                 {
@@ -65,6 +73,14 @@
                     "path":"/ios/v2/guides"
                 },
                 {
+                    "name":"Tutorials",
+                    "path":"/ios/v2/tutorials"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"https://app.mapsindoors.com/mapsindoors/reference/ios/v2/index.html"
+                },
+                {
                     "name":"Changelog",
                     "path":"/ios/v2/changelog"
                 }
@@ -74,8 +90,8 @@
             "name":"iOS SDK",
             "group":"ios",
             "path":"/ios/v1",
-            "version":"1.11.1",
-            "primary":true,
+            "version":"1.12.6",
+            "primary":false,
             "logo":"/logos/apple-logo.svg",
             "menu": [
                 {
@@ -100,7 +116,7 @@
             "name":"Web SDK",
             "group":"web",
             "path":"/web",
-            "version":"1.4.1",
+            "version":"2.0.0",
             "primary":true,
             "logo":"/logos/web-logo.svg",
             "menu": [
@@ -125,7 +141,7 @@
         {
             "name":"CMS",
             "path":"/cms",
-            "version":"3.0",
+            "version":"latest",
             "primary":true,
             "logo":"/logos/cms.png",
             "menu": [

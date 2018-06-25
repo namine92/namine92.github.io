@@ -3,8 +3,8 @@
   <div class="bar default">
       {{ $isHome := (eq $.Page.Title $.Site.Title) }}
       {{ if not $isHome }}
-      <div class="button button-back" role="button" aria-label="Back">
-        <a href="#" onclick="window.history.back()" title="Back" class="toggle-button icon icon-back"></a>
+      <div class="button button-home" role="button" aria-label="Back">
+        <a href="/" title="Back" class="toggle-button icon icon-close"></a>
       </div>
       {{ end }}
     <div class="button button-menu" role="button" aria-label="Menu">

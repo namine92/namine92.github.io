@@ -16,11 +16,11 @@ You need to setup the Google Maps API in your project by following the steps in 
 * Android : You will need the [Google Maps Android API](https://developers.google.com/maps/documentation/android-api/start).
 * iOS : You will need the [Google Maps SDK for iOS](https://developers.google.com/maps/documentation/ios-sdk/start).
 
-Some Web Service APIs are needed also for the mapsIndoors SDK so make sure to enable them when getting your key :
+Some Web Service APIs are needed also for the MapsIndoors SDK so make sure to enable them when getting your key:
 
-* [Google Places API Web Service](https://developers.google.com/places/web-service/intro).
 * [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start).
 * [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start).
+* [Google Places API Web Service](https://developers.google.com/places/web-service/intro)
 
 ### Get a MapsIndoors Content Key and API Key
 
@@ -31,49 +31,7 @@ You can find more information about how to get a solution ID and becoming a part
 
 Now you have to choose the platform that you are working on to continue the steps. 	
 
-* Web
-  * [Guide - getting started](/web)
-  * [Guide - part 2](/web/guide-part2)
-  * [Reference](/web/reference)
-* Android
-  * [Guide - getting started](/android)
-  * [Guide - part 2](/android/guide-part2)
-  * [Reference](/android/reference)
-* iOS
-  * [Guide - getting started](/ios)
-  * [Guide - part 2](/ios/guide-part2)
-  * [Reference](/ios/reference)
+* [Web - getting started](/web)
+* [Android - getting started](/android)
+* [iOS - getting started](/ios)
 
-## About MapsIndoors SDK
-
-MapsIndoors SDK smoothly provides you with indoor maps, search and navigation to web, mobile web and native Android and iOS. It can be interfaced with leading indoor positioning technologies such as Bluetooth beacons, WiFi positioning or sensor-based. MapsIndoors SDK serves as a rock-solid backbone that is used by thousands of simultaneous users for indoor navigation.
-
-### MapsIndoors for Web
-
-MapsIndoors for Web will provide your users with browser-based wayfinding using the search function. Users will be provided with wayfinding between any two points of interest within your facility, or from any location outside your facility to any point of interest inside of it. The web solution is optimised for desktop and mobile. Your users can get directions by typing in their location and their destination. They can also get from anywhere outside your facility to any point of interest inside.
-
-* Built on top of Google Maps Javascript V3
-* Simple setup using one script load
-* Optimised for both desktop and mobile
-* Online documentation and getting-started guide
-* Cutting-edge MapsIndoors application source code
-
-### MapsIndoors for iOS
-
-Indoor navigation for iOS provides you with a seamless transition from outdoor to indoor navigation. Your users will be able to get navigation to anywhere – from any location outside and inside your facility. Interface your indoor map with an indoor positioning system and provide users with bluedot indoor navigation. Use their geolocation to send your users push-notifications.
-
-* Built on top of Google Maps SDK for iOS
-* Easy integration using CocoaPods
-* API Documentation in headers
-* Online documentation and getting-started guide
-* Cutting-edge MapsIndoors application source code for both phones, phablets and tablets
-
-### MapsIndoors for Android
-
-Like for iOS, indoor navigation for Android provides your users with a great indoor wayfinding experience in the palm of their hand. It is easy to integrate into your app and can be interfaced with your indoor positioning system. By doing so, you get a better accuracy which you can use for location-based services while your users will get better indoor navigation.
-
-* Built on top of Google Maps SDK for Android
-* Easy integration using Gradle dependencies
-* AAR-Library ready to be included into your App
-* Online documentation and getting-started guide
-* Cutting-edge MapsIndoors application source code for both phones, phablets and tablets

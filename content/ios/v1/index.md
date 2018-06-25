@@ -2,6 +2,9 @@
 title: MapsIndoors for iOS - Getting Started
 
 ---
+
+This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the [prerequisites](../../#prerequisites).
+
 ## Basic Example
 
 You will find in the [link](https://github.com/namine92/mapsIndooriOSTut) an up and running project that contains the minimum code to start a MapsIndoors project.

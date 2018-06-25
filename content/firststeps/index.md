@@ -26,15 +26,6 @@ You can find more information about how to get a solution ID and becoming a part
 
 Now you have to choose the platform that you are working on to continue the steps.
 
-* Web
-  * [Guide - getting started](/web)
-  * [Guide - part 2](/web/guide-part2)
-  * [Reference](/web/reference)
-* Android
-  * [Guide - getting started](/android)
-  * [Guide - part 2](/android/guide-part2)
-  * [Reference](/android/reference)
-* iOS
-  * [Guide - getting started](/ios)
-  * [Guide - part 2](/ios/guide-part2)
-  * [Reference](/ios/reference)
+* [Web - getting started](/web)
+* [Android - getting started](/android)
+* [iOS - getting started](/ios)

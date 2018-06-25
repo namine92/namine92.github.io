@@ -4,12 +4,17 @@ title: Changelog
 Changelog for MapsIndoors for iOS. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!---
- ## [Unreleased]
- -->
+## [Unreleased]
+-->
+
+## [1.12.6] - 2018-03-13
+### Fixed
+- Fixed issue with disappearing building graphics if the internal urls was invalid
+
 ## [1.12.5] - 2018-01-15
 ### Fixed
 - Fixed issue causing blue dot to disappear in some cases
- 
+
 ## [1.12.4] - 2018-01-12
 ### Fixed
 - Fixed issue causing `MPVenueProvider` not to return any buildings once in a while

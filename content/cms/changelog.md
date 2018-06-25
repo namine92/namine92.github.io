@@ -2,6 +2,32 @@
 title: Changelog
 ---
 
+## [3.5.0] - 20-03-2018
+
+### Added
+ - Navigate between buildings or reset the venue view in export map.
+ - Filter locations by floor (list view).
+ - New Map (google maps js api 3.32).
+
+### Changed
+ - Moved location type to the top to better indicate its importance. 
+ - The name of a location is now automatically set to the type. Can still be changed if needed.
+ - Split display settings and types in two pages.
+ - Improved analytics.
+
+### Fixed
+ - Floor selector displays name rather than ID.
+ - Displaying default language name on venues instead of Adm. ID.
+
+## [3.4.1] - 20-02-2018
+
+### Added
+
+### Changed
+
+### Fixed
+- Creating a new location with custom properties did not work on all solutions.
+
 ## [3.4.0] - 20-02-2018
 
 ### Added

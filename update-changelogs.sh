@@ -1,22 +1,27 @@
+echo "Updating changelog for IOS SDK"
 pushd .
 cd content/ios/v2
-git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git develop CHANGELOG.md | tar -x
+git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git master CHANGELOG.md | tar -x
 popd
+echo "Updating changelog for IOS SDK v1"
 pushd .
 cd content/ios/v1
-git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git develop CHANGELOG.md | tar -x
+git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git maintenance/sdk_v1 CHANGELOG.md | tar -x
 popd
+echo "Updating changelog for Web SDK"
 pushd .
 cd content/web
 git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISKDJS.git master:MapsIndoors\ SDK\ for\ JavaScript CHANGELOG.md | tar -x
 popd
+echo "Updating changelog for CMS"
 pushd .
 cd content/cms
 git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/CMS/MapsIndoorsCMS3.git master CHANGELOG.md | tar -x
 popd
+echo "Updating changelog for Android"
 pushd .
-cd content/android
-git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKAND.git develop CHANGELOG.md | tar -x
+cd content/android/v2
+git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKAND.git develop:MapsIndoorsSDK CHANGELOG.md | tar -x
 popd
 
 REPLACE_STR="# Changelog"
