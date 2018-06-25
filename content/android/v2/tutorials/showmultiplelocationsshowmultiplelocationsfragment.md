@@ -47,4 +47,4 @@ OnLocationsReadyListener mSearchLocationsReadyListener = new OnLocationsReadyLis
 };
 ```
 
-[See the sample in ShowMultipleLocationsFragment.java](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/tree/master/showmultiplelocations/ShowMultipleLocationsFragment.java)
+[See the sample in ShowMultipleLocationsFragment.java](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/showmultiplelocations/ShowMultipleLocationsFragment.java)

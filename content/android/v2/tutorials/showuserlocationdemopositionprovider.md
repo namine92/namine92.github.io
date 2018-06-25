@@ -74,4 +74,4 @@ public boolean isRunning() {
 ```
 In [Part 2](../showuserlocationshowuserlocationfragment) we will create the map fragment that displays the blue dot.
 
-[See the sample in DemoPositionProvider.java](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/tree/master/showuserLocation/DemoPositionProvider.java)
+[See the sample in DemoPositionProvider.java](https://github.com/MapsIndoors/MapsIndoorsAndroid-Demo-Samples/blob/master/app/src/main/java/com/mapsindoors/showuserLocation/DemoPositionProvider.java)
