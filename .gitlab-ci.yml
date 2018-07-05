@@ -8,3 +8,6 @@ prepare:
   stage: build
   script:
     - hugo
+
+tags:
+  - osx
