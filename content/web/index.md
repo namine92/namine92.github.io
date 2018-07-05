@@ -38,8 +38,8 @@ If you need to use a floor selector (most projects do), just add a css reference
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY&callback=init" async defer></script>
-<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-{{%product-version%}}.min.js?solutionId=MY_MAPSINDOORS_API_KEY" async defer></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=MY_GOOGLE_API_KEY"></script>
+<script type="text/javascript" src="https://app.mapsindoors.com/mapsindoors/js/sdk/MapsIndoors-{{%product-version%}}.min.js?solutionId=MY_MAPSINDOORS_API_KEY"></script>
 // Load css for default floor selector
 <link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/FloorSelector.css" type="text/css" rel="stylesheet" />
 ```
@@ -48,8 +48,6 @@ Replace:
 
 * `MY_GOOGLE_API_KEY` with your own Google api key
 * `MY_MAPSINDOORS_API_KEY` with your MapsIndoors api key (formerly known as a solution id)
-
-**Note:** This example is using the *deferred* loading of the scripts. You can also use the synchronous loading by removing the `async defer` attributes. If you do this, it is recommended to place the scripts just before the closing `</body>` tag.
 
 As always when setting up Google Maps, create a div with defined width and height.
 
@@ -79,6 +77,7 @@ var init = function () {
 
 };
 
+google.maps.event.addDomListener(window, 'load', init);
 ```
 
 ## Using Events
