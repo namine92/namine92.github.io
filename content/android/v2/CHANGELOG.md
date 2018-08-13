@@ -10,21 +10,52 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
-## [2.0.3] - 2018-06-??
+## [2.0.4] - 2018-07-26
+
+### Added
+
+- `MapsIndoors.getMessages()`: Gets all the localized messages (beacon related) for the current solution
+- `MapsIndoors.synchronizeMessages()`: Will pull message data from MapsIndoors backend servers
+- `Venue.getGeometry()`: added missing getter
+
+### Changed
+
+- `MapControl.selectFloor()`: added validation of the given parameter (floor Z index). It will now throw `IllegalArgumentException` (if `dbglog.useDebug( true )`) if an invalid floor Z index was used.
+
+### Fixed
+
+- `MapControl.displaySearchResults()` did show all POIs on the current floor shown regardless their own
+- MapsPeople watermark not keeping the same padding on both portrait and landscape modes
+
+## [2.0.3] - 2018-07-11
 
 ### Added
 
 - `MapsIndoors.getAvailableLanguages()` returns a list of the solution's available languages or just `null` if data isn't available
 - `MIConnectivityUtils.isOnline()` replaces `UrlLoader.isOnline()`
 - `MapControl.setOnMarkerInfoWindowLongClickListener()`
+- `LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId )`
+- `LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId, with, height )`
+- `LocationDisplayRule.Builder.setVectorDrawableIcon( bitmapDrawableResId, with, height )`
+- `LocationDisplayRule.Builder.setIconSize( size )`
+- `MapControl.setUserLocationIconFromDisplayRule( locationDisplayRule )`
 
 ### Changed
 
 - `MapsIndoors.getDefaultLanguage()` will return now the solution's default language instead of the library's fallback one. If there is no data available yet, this method will now return `null`
+- `LocationDisplayRule.Builder.setIconURL( iconURL )` is now an "internal" method and should not be used. Please use any of the other ways to set display rule icon
 
 ### Deprecated
 
 - `UrlLoader.isOnline()`. Use `MIConnectivityUtils.isOnline()` instead
+- `LocationDisplayRule.Builder.setIcon( bitmapDrawableResId )`. Use `LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId )` or `LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId, with, height )` instead
+- `LocationDisplayRule.Builder.setIcon( vectorDrawableResId, with, height )`. Use `LocationDisplayRule.Builder.setVectorDrawableIcon( vectorDrawableResId, with, height )` instead
+- `LocationDisplayRule.Builder.setPOISize( size )`. Use `LocationDisplayRule.Builder.setIconSize( size )` instead
+- `MapControl.setUserLocationIcon( bitmapDrawableResId )` and `MapControl.setUserLocationIcon( vectorDrawableResId, color, width, height )`. Use `MapControl.setUserLocationIconFromDisplayRule( locationDisplayRule )` instead
+
+### Fixed
+
+- Custom display rules set on locations now working
 
 ## [2.0.2] - 2018-06-20
 

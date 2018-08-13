@@ -1,6 +1,6 @@
 baseurl = "https://mapsindoors.github.io/"
 languageCode = "en-us"
-title = "MapsIndoors Developers"
+title = "Indoor Navigation Built with Google Maps"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
