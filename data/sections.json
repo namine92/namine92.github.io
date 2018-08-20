@@ -116,7 +116,7 @@
             "name":"Web SDK",
             "group":"web",
             "path":"/web",
-            "version":"2.0.0",
+            "version":"2.x.x",
             "primary":true,
             "logo":"/logos/web-logo.svg",
             "menu": [
