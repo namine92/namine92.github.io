@@ -62,6 +62,15 @@ repositories{
 }
 ```
 
+Put those lines in your proguard-rules files :
+
+```groovy
+-keep interface com.mapsindoors.mapssdk.** { *; }
+-keep class com.mapsindoors.mapssdk.errors.** { *; }
+-keepclassmembers class com.mapsindoors.mapssdk.models.** { <fields>; }
+-keep class com.mapsindoors.mapssdk.dbglog
+```
+
 Sync your project with gradle files.
 
 ## Setup Google Maps
