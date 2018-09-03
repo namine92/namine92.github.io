@@ -7,7 +7,7 @@ Setup map so that it shows the demo venue and initialise mapControl
 ```
 self.map = GMSMapView.init(frame: CGRect.zero)
 self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
-self.mapControl = MPMapControl.init(map: self.map)
+self.mapControl = MPMapControl.init(map: self.map!)
 ```
 Setup a button that targets a method (`openSearch`) in your class
 ```

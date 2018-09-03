@@ -25,7 +25,7 @@ Inside `viewDidLoad`, setup the map and the mapControl instance
 self.map = GMSMapView.init(frame: CGRect.zero)
 self.map?.delegate = self
 self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
-self.mapControl = MPMapControl.init(map: self.map)
+self.mapControl = MPMapControl.init(map: self.map!)
 ```
 Setup the label views
 ```
