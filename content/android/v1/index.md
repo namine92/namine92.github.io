@@ -2,6 +2,8 @@
 title: MapsIndoors for Android - Getting Started
 ---
 
+> Note! A [newer version](../../android/v2) of the MapsIndoors SDK for Android is available. The legacy version will not receive new features and will only get bugfix and security updates.
+
 This guide explains how to start using a MapsIndoors map in your Android application. Make sure that you have read the [prerequisites](../../#prerequisites).
 
 ## Basic Example
