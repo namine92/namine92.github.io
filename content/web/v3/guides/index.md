@@ -106,10 +106,8 @@ mapsIndoors.setDisplayRule("info", {from:16, icon:"http://myiconhost.com/info.pn
 Display rules are based on POI/Location types. Every location has one type property `location.properties.type`. A set of types is defined/used in the MapsIndoors CMS. The current list of types can be listed using the LocationsService:
 
 ```javascript
-var locations = new mapsindoors.LocationsService();
-
-locations.getTypes().then(function(types) {
-   // returns array of types with format { name:string, icon:string }
+mapsindoors.SolutionService.getSolution().then(function(solution) {
+    var types = solution.types;
 });
 ```
 
@@ -121,21 +119,18 @@ mapsIndoors.setDisplayRule("office", { from:20 });  // Using default type icon
 ```
 
 
-## Using locate
+## Searching fo Locations and Displaying them on a Map
 
-Use the locate method to find and highlight different elements of the MapsIndoors content. An example is given below. Note: The example shows all options, but only one of building, venue, locationId and location is necessary.
+Use the location service in conjunction with the filter method on a MapsIndoors instance to find and highlight different elements of the MapsIndoors content. An example is given below. Note: The example shows all options, but only one of building, venue, locationId and location is necessary.
 
 ```javascript
 var googleMap = new google.maps.Map(...);
 
 var mapsIndoors = new mapsindoors.MapsIndoors({map:googleMap});
 
-mapsIndoors.locate(
+mapsindoors.LocationService.getLocations(
    {
-      building: "34"          // Optional - Using the administrative id for building
-      venue: "VenueA"         // Optional - Using name for venue
-      locationId: "id"        // Optional - Mapsindoors location id string
-      locations: {            
+                
          q: "lounge",         // Optional - Search for matches in location name or aliases
          building: "34",      // Optional - Fetch from specific building, using the administrative id of the building
          venue: "VenueA",     // Optional - Fetch from specific venue, using name of venue
@@ -146,27 +141,14 @@ mapsIndoors.locate(
          radius: 50           // Optional - Fetch only nearest within meters from near
          orderBy: "name"      // Optional - Sort by name (possible values are Name, Floor
                               // Building, Venue, Type and RoomId)
-      },
-      fitBounds: true,        // Optional - Suppress display of other
-                              // existing locations on the map
-      fitBounds: true,        // Optional - Center map around result    
-      displayRule: {          // Optional - Set a display rule for the resulting content
-         from:16,
-         icon: "http://myiconhost.com/searchresult.png"
-      }
-   }
-);
+    }).then(function(locations) {
+        //get all the ids
+        let filter = locations.map(location => location.id);
+        mapsIndoors.filter(filter, true);
+    });
 ```
 
-## Setting the map
-
-Set the Google map that needs to be MapsIndoors-enabled.
-
-```javascript
-mapsIndoors.setMap(googleMap)
-```
-
-### Reset the style of the map
+## Reset the style of the map
 
 Resets the map to the appearance defined by the provided display rules. Displayed floor, map center and zoom-level will remain untouched.
 
@@ -236,13 +218,10 @@ var directionsRenderer = new mapsindoors.DirectionsRenderer(
 {
    map: googleMap,               // The Google map on which to render
    mapsindoors: mapsIndoors,     // The MapsIndoors instance
-   suppressMarkers: boolean,     // Optional - If true, action/step point markers will not be rendered
-   directions: directionsObject, // Optional - the actual directions object containing the directions data
-   legIndex: number              // Optional - the part of the route which should render (0, 1, 2, n), defaults to 0. Highest index is directionsObject.legs.length - 1.
 }
 );
 ```
-### setting the style of the direction renderer
+### Setting the style of the direction renderer
 
 Sets the directions rendering style. For twaeking style of route polylines we use the [Google Maps v3 API PolylineOptions](https://developers.google.com/maps/documentation/javascript/reference#PolylineOptions) format. The methods first parameter refers to a style type that can be either the travel mode for outdoor routes or the type of way for indoor routes. The possible style types include:
 
@@ -261,11 +240,8 @@ Sets the directions rendering style. For twaeking style of route polylines we us
 ```javascript
 var directionsRenderer = new mapsindoors.DirectionsRenderer();
 
-directionsRenderer.setStyle('default',
+directionsRenderer.setOptions(
 {
-   clickable:  boolean                                 // Indicates whether this Polyline handles mouse events. Defaults to true.
-   icons: Array<IconSequence>                          // The icons to be rendered along the polyline.
-   path: MVCArray<LatLng>|Array<LatLng|LatLngLiteral>  // The ordered sequence of coordinates of the Polyline. This path may be specified using either a simple array of LatLngs, or an MVCArray of LatLngs. Note that if you pass a simple array, it will be converted to an MVCArray Inserting or removing LatLngs in the MVCArray will automatically update the polyline on the map.
    strokeColor: string                                 // The stroke color. All CSS3 colors are supported except for extended named colors.
    strokeOpacity: number                               // The stroke opacity between 0.0 and 1.0.
    strokeWeight: number                                // The stroke width in pixels.
@@ -274,7 +250,7 @@ directionsRenderer.setStyle('default',
 }
 );
 ```
-### Setting the direction
+### Getting a Route and Rendering it on a Map
 
 Renders the route result using the applied render options. Used in conjunction with a DirectionsService, this is an example of displaying a route on the map.
 
@@ -284,7 +260,7 @@ var googleMap = new google.maps.Map(...);
 var directionsService = new mapsindoors.DirectionsService();
 var renderer = new mapsindoors.DirectionsRenderer({ map: googleMap });
 
-directionsService.route(
+directionsService.getRoute(
    {
       origin: {
          lat: 55.687791059149376,
@@ -296,11 +272,11 @@ directionsService.route(
          lng: 12.568619293609554,
          floor: 0
       },
-      travelMode: "WALKING"
+      mode: "WALKING"
       avoidStairs: true
    }
 ).then(function (result) {
-   renderer.setDirections(result);
+   renderer.setRoute(result.routes[0]);
 });
 ```
 ### Getting the location using queries
@@ -308,7 +284,7 @@ directionsService.route(
 Get locations from MapsIndoors using a query object (optional). With no query parameter, all published locations will be fetched.
 
 ```javascript
-var locations = new mapsindoors.LocationsService();
+var locations = mapsindoors.LocationsService;
 
 locations.getLocations(
 {
