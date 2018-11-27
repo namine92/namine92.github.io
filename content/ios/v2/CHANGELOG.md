@@ -11,6 +11,22 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [2.1.1] 2018-09-07
+### Fixed
+- Fixed an issue where occasionally rendered routes where not fitted properly inside the screen.
+- Fixed an issue where occasionally the selected location and search results would fail to appear.
+- Heading indicator on the "my position" marker is now only shown when heading data is available; would point straight north previously.
+
+## [2.1.0] 2018-08-21
+### Changed
+- Changed how icons and labels are shown on the map, so that no labels or icons are shown on top of each other (Icon & label collision handling)
+- Now supporting different icon sizes as recieved from CMS
+- Now able to show outlines of rooms and areas if the dataset is prepared for this
+### Added
+- Basic voiceover/accessibility support.
+### Fixed
+- Fixed MPLocationQuery.orderBy was not respected.
+
 ## [2.0.4] 2018-06-27
 ### Fixed
 - Fixed a major bug that caused the generated Swift interface in XCode to expose assumed nonnull properties in various areas of the interface

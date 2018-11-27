@@ -4,7 +4,7 @@
             "name":"Android SDK",
             "group":"android",
             "path":"/android/v2",
-            "version":"2.0.2",
+            "version":"2.0.7",
             "primary":true, 
             "logo":"/logos/android-logo.svg",
             "menu": [
@@ -60,7 +60,7 @@
             "name":"iOS SDK",
             "group":"ios",
             "path":"/ios/v2",
-            "version":"2.1.0",
+            "version":"2.1.1",
             "primary":true,
             "logo":"/logos/apple-logo.svg",
             "menu": [
@@ -115,26 +115,52 @@
         {
             "name":"Web SDK",
             "group":"web",
-            "path":"/web",
-            "version":"2.x.x",
+            "path":"/web/v3",
+            "version":"3.x.x",
             "primary":true,
             "logo":"/logos/web-logo.svg",
             "menu": [
                 {
                     "name":"Getting Started",
-                    "path":"/web"
+                    "path":"/web/v3"
                 },
                 {
                     "name":"Next Steps",
-                    "path":"/web/guide-part2"
+                    "path":"/web/v3/guide-part2"
                 },
                 {
                     "name":"Reference Docs",
-                    "path":"/web/reference"
+                    "path":"/web/v3/reference"
                 },
                 {
                     "name":"Changelog",
-                    "path":"/web/changelog"
+                    "path":"/web/v3/changelog"
+                }
+            ]
+        },
+        {
+            "name":"Web SDK",
+            "group":"web",
+            "path":"/web/v2",
+            "version":"2.x.x",
+            "primary":false,
+            "logo":"/logos/web-logo.svg",
+            "menu": [
+                {
+                    "name":"Getting Started",
+                    "path":"/web/v2"
+                },
+                {
+                    "name":"Next Steps",
+                    "path":"/web/v2/guide-part2"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"/web/v2/reference"
+                },
+                {
+                    "name":"Changelog",
+                    "path":"/web/v2/changelog"
                 }
             ]
         },
