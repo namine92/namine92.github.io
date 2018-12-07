@@ -11,6 +11,40 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [2.1.6] 2018-11-27
+### Added
+- Support for extra time penalties in the directions service
+### Fixed
+- When in flightmode, the routenetwork service would make two callbacks to the app: first callback with cached data and second callback with an error.
+The second callback would result in no route being produced
+
+## [2.1.5] 2018-11-06
+### Added
+- Support for multi-polygon floor geometry
+
+## [2.1.4] 2018-11-01
+### Fixed
+- Issues related to POI presentation.
+
+## [2.1.3] 2018-10-26
+### Fixed
+- Issues related to POI presentation.
+
+## [2.1.2] 2018-10-10
+### Fixed
+- Fixed a Route Rendering issue causing it not to fit path shape properly
+- Fixed bug that was causing an occasional malformatted url for the Google directions service.
+- MapsPeople logo was misplaced on recent iPhone models. Now aligned to the Google Maps logo.
+- Content type validations on some internal endpoints
+- Improved the building selection triggered on camera change
+- Fixed resetting marker map from non-ui thread that sometimes lead to a crash
+- Fixed crash that was caused by GMSProjection occasionally not being in an operational state
+### Added
+- Support for multi-polygon floor geometry
+- Respect larger (accessibility) font sizes, triggered automatically.
+- Added some more internal data validation to the MPLocation
+
+
 ## [2.1.1] 2018-09-07
 ### Fixed
 - Fixed an issue where occasionally rendered routes where not fitted properly inside the screen.

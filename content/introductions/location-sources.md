@@ -4,17 +4,28 @@ title: Location Data Sources
 
 > Note! This document describes a pre-release feature. We reserve the right to change this feature and the corresponding interfaces without further notice. Any mentioned SDK versions are not intended for production use.
 
-At MapsPeople we are in the process of shaping up a new feature in MapsIndoors SDK for Android and iOS called Location Data Sources. Basically we are making it possible to register your own custom data source, adhering to a very simple interface, best described in the following illustration:
+At MapsPeople we are in the process of shaping up a new feature in MapsIndoors SDK for Android and iOS called Location Data Sources. Basically we are making it possible to register your own custom data source, adhering to a very simple interface.
+
+The Location Data Sources feature is expected to be released medio Q1 2019. If you are interested in evaluating this feature in a pre-release stage, please read on...
+
+## The Concepts
+The central concepts in this feature are Location Sources and Location Observers, and they are best described in the following illustration:
 
 ![Location Data Sources, Observers and their relation](source_observer.png)
 
+### Location Source
+Maintains an array of locations and notifies its Location Observers about location and status updates.
+
+### Location Observer
+Can observe a Location Source for status changes and location updates.
+
 ## Creating your own Location Source
+See a [demo and tutorial of this feature for iOS](#ios-demo-and-tutorial-for-location-sources) (Android coming soon). Of course there is more to it than just these interfaces, but assuming that working with the actual 3rd party data is an isolated problem, the setup steps is as follows:
+
 1. Implement a `LocationSource` that pulls data from your own or a 3rd party database, API or backend and convert this data into MapsIndoors `Location`'s
 2. Pass the Locations as updates to MapsIndoors through the interface methods of the subscribing `LocationObserver`'s in your `LocationSource` implementation.
 
-The Location Data Sources feature is expected to be released medio Q1 2019. If you are interested in evaluating this feature in a pre-release stage, please read on.
-
-This feature is present in the MapsIndoors SDK for iOS version 3.0.0-alpha. To install this version, just follow the [latest version 2.1.6 install guide](/ios/v2)
+This feature is present in the MapsIndoors SDK for iOS version 3.0.0-alpha. To install this version, just follow the [latest version 2.1.6 install guide](/ios/v2). Replace the pod version to `3.0.0-alpha10` and run `pod install`.
 
 Create an implementation of the `MPLocationSource` interface, implementing all the required methods. When you call `MPLocationObserver.onLocationsUpdate()` and provide results in `MPLocationSource.getLocations()` you need to create instances of `MPLocation`'s. This is done using a builder called `MPLocationUpdate`. See an example here:
 
@@ -38,3 +49,5 @@ MapsIndoors.register([
         ])
 ```
 
+## IOS Demo and Tutorial for Location Sources
+A full demo example and tutorial is available [here](/ios/v3/tutorials/locationdatasourcespeoplelocationsdatasource/) (Android resources are coming soon as well).
