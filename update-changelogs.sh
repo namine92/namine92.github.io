@@ -10,8 +10,8 @@ git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git mai
 popd
 echo "Updating changelog for Web SDK"
 pushd .
-cd content/web
-git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISKDJS.git master:MapsIndoors\ SDK\ for\ JavaScript CHANGELOG.md | tar -x
+cd content/web/v3
+git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISKDJS.git master CHANGELOG.md | tar -x
 popd
 echo "Updating changelog for CMS"
 pushd .

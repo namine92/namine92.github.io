@@ -4,7 +4,7 @@
             "name":"Android SDK",
             "group":"android",
             "path":"/android/v2",
-            "version":"2.0.7",
+            "version":"2.0.8",
             "primary":true, 
             "logo":"/logos/android-logo.svg",
             "menu": [
@@ -60,7 +60,7 @@
             "name":"iOS SDK",
             "group":"ios",
             "path":"/ios/v2",
-            "version":"2.1.6",
+            "version":"2.1.8",
             "primary":true,
             "logo":"/logos/apple-logo.svg",
             "menu": [
@@ -125,8 +125,8 @@
                     "path":"/web/v3"
                 },
                 {
-                    "name":"Next Steps",
-                    "path":"/web/v3/guide-part2"
+                    "name":"Guides",
+                    "path":"/web/v3/guides"
                 },
                 {
                     "name":"Reference Docs",
@@ -161,23 +161,6 @@
                 {
                     "name":"Changelog",
                     "path":"/web/v2/changelog"
-                }
-            ]
-        },
-        {
-            "name":"CMS",
-            "path":"/cms",
-            "version":"latest",
-            "primary":true,
-            "logo":"/logos/cms.png",
-            "menu": [
-                {
-                    "name":"Guide",
-                    "path":"/cms"
-                },
-                {
-                    "name":"Changelog",
-                    "path":"/cms/changelog"
                 }
             ]
         }

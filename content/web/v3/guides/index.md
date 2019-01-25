@@ -38,48 +38,6 @@ The event names and their targets are as follows:
 | "floor_changed" | MapsIndoors | Current floor index |
 | "location_click" | MapsIndoors | Selected location | 	 	 
 
-## Create an Infobox
-
-Most often you might want to display location content when a user clicks or taps on an icon. You can use the simple Infobox UI component for this. Add the infobox stylesheet as a starting point for the design.
-
-```html
-<link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/Infobox.css" rel="stylesheet" />
-```
-
-Provide the following html code in your document. For templating we use [Markup.js](https://github.com/adammark/Markup.js/).
-
-```html
-<div id="infobox" class="mapsindoors infobox">
-   <a data-close>x</a>
-   <table>
-      <tr><td><i class="fa fa-map-marker"></i></td><td><h3>{{ if properties.roomid properties.roomid }} {{ properties.name }}</h3></td></tr>
-      <tr><td><i class="fa fa-building-o"></i></td><td>Building {{ properties.building }}</td></tr>
-      <tr><td><i class="fa fa-arrows-v"></i></td><td>Floor {{ properties.floor }}</td></tr>
-      <tr><td><i class="fa fa-info"></i></td><td>{{ if properties.description properties.description }}</td></tr>
-   </table>
-</div>
-```
-
-Here is an example on how to setup the component.
-
-```javascript
-// Div containing an input search element
-var infoDiv = document.getElementById('infobox');
-
-// Optionally insert the Infobox UI-component into google maps
-googleMap.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(infoDiv);
-// Instantiate infobox
-var infobox = new mapsindoors.Infobox(infoDiv);
-
-locationsService.getLocationDetails("SOME-MAPSINDOORS-ID").then(function (location) {
-   // Show location content in infobox
-   infobox.show(location);
-   // if <a data-close>x</a> is present in your infobox element, user can close the infobox, or it can be closed programmatically
-   setTimeout(function() {
-      infobox.close();
-   }, 5000);
-});
-```
 
 ## Using the Display rules
 
@@ -148,49 +106,7 @@ mapsindoors.LocationService.getLocations(
     });
 ```
 
-## Reset the style of the map
-
-Resets the map to the appearance defined by the provided display rules. Displayed floor, map center and zoom-level will remain untouched.
-
-```javascript
-mapsIndoors.reset()
-```
-
-## Create a Search and Suggestions box
-
-If you need to facilitate search functionality to your MapsIndoors solution, you can use the Suggestions UI component. Add the suggestions stylesheet as a starting point for the design.
-
-```html
-<link href="https://app.mapsindoors.com/mapsindoors/js/sdk/ui/Suggestions.css" rel="stylesheet" />
-```
-
-Add the following html somewhere in your document.
-
-```html
-<div id="search-box" class="mapsindoors search-container">
-    <input type="search" placeholder="Search rooms and facilites..." class="mapsindoors search">
-    <ul class="mapsindoors suggestions"></ul>
-</div>
-```
-
-Given the above code, here is a simple example on how to use the component.
-
-```javascript
-// Div containing an input search element
-var searchDiv = document.getElementById('search-box');
-
-// If needed, insert the div element as a map control
-googleMap.controls[google.maps.ControlPosition.TOP_LEFT].push(searchDiv);
-
-// Instantiates suggestions object
-var suggestions = new mapsindoors.Suggestions(searchDiv);
-
-// Listen for user interaction - returns the selected location
-google.maps.event.addListener(suggestions, 'location_changed', function (location) {
-    console.dir(location);
-});
-```  
-
+## Map Rendering
 
 ### Setting the floor
 
@@ -207,6 +123,14 @@ Returns current floor index number (integer), e.g. 0 for ground floor, -1 for ba
 
 ```javascript
 mapsIndoors.getFloor()
+```
+
+### Resetting the map
+
+Resets the map to the appearance defined by the provided display rules. Displayed floor, map center and zoom-level will remain untouched.
+
+```javascript
+mapsIndoors.reset()
 ```
 
 ## Using the directionsRenderer

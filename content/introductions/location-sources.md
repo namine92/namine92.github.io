@@ -25,7 +25,7 @@ See a [demo and tutorial of this feature for iOS](#ios-demo-and-tutorial-for-loc
 1. Implement a `LocationSource` that pulls data from your own or a 3rd party database, API or backend and convert this data into MapsIndoors `Location`'s
 2. Pass the Locations as updates to MapsIndoors through the interface methods of the subscribing `LocationObserver`'s in your `LocationSource` implementation.
 
-This feature is present in the MapsIndoors SDK for iOS version 3.0.0-alpha. To install this version, just follow the [latest version 2.1.6 install guide](/ios/v2). Replace the pod version to `3.0.0-alpha10` and run `pod install`.
+This feature is present in the MapsIndoors SDK for iOS version 3.0.0-alpha. To install this version, just follow the [latest version 2.1.6 install guide](/ios/v2). Replace the pod version to `3.0.0-alpha18` and run `pod install`.
 
 Create an implementation of the `MPLocationSource` interface, implementing all the required methods. When you call `MPLocationObserver.onLocationsUpdate()` and provide results in `MPLocationSource.getLocations()` you need to create instances of `MPLocation`'s. This is done using a builder called `MPLocationUpdate`. See an example here:
 
