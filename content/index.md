@@ -31,7 +31,7 @@ You can find more information about how to get a solution ID and becoming a part
 
 Now you have to choose the platform that you are working on to continue the steps. 	
 
-* [Web - getting started](/web)
-* [Android - getting started](/android)
-* [iOS - getting started](/ios)
+* [Web - getting started](/web/v3)
+* [Android - getting started](/android/v2)
+* [iOS - getting started](/ios/v2)
 
