@@ -11,6 +11,19 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.0.0] 2019-03-04
+### Added
+- Support for external location data sources using `[MapsIndoors registerLocationSources:sources]`
+- New location service `MPLocationService` to replace `MPLocationsProvider`
+- Location clustering support using `MPMapControl.locationClusteringEnabled`
+- Added building and venues to the search experience
+
+### Changed
+- MPLocation properties are now read only
+
+### Removed
+- Removed a number of deprecated methods that was introduced in V1
+
 ## [2.1.9] 2019-02-15
 ### Fixed
 - Fixed an occasional crash in MPVenueProvider, reported in [github](https://github.com/MapsIndoors/MapsIndoorsIOS/issues/5).

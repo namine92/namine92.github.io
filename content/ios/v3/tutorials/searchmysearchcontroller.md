@@ -18,14 +18,14 @@ class MySearchController: UIViewController, UISearchBarDelegate, UITableViewDele
 ```
 Setup member variables for `MySearchController`:
 
-* An instance of type `MPLocationsProvider` (the service)
-* An instance of type `MPLocationQuery`
+* An instance of type `MPLocationService`
+* An instance of type `MPQuery`
 * An array of `MPLocation` to hold your list of results
 * Your delegate object
 * A search bar view
 * A table view
 ```
-let locationsProvider = MPLocationService.init()
+let locationService = MPLocationService.sharedInstance()
 let query = MPQuery.init()
 var locations:[MPLocation] = []
 var delegate:MySearchControllerDelegate? = nil
@@ -90,4 +90,4 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 ```
  In [Part 2](../searchsearchmapcontroller) we will create the map view controller that displays the search selection. 
 
-[See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Search/MySearchController.swift)
+[See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Search/MySearchController.swift)

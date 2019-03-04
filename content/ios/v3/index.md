@@ -3,8 +3,6 @@ title: MapsIndoors for iOS - Getting Started
 
 ---
 
-> Note! A [newer version](../../ios/v3) of the MapsIndoors SDK for iOS is available. The legacy version will not receive new features and will only get bugfix and security updates.
-
 This guide explains how to start using a MapsIndoors map in your iOS application. Make sure that you have read the [prerequisites](../../#prerequisites).
 
 To benefit from the guides, you will need basic knowledge about:

@@ -22,4 +22,4 @@ locations.getLocationsUsing(queryObj) { (locationData, error) in
 }
 ```
 
-[See the sample in ShowLocationController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Show Location/ShowLocationController.swift)
+[See the sample in ShowLocationController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show Location/ShowLocationController.swift)

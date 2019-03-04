@@ -59,9 +59,39 @@
         {
             "name":"iOS SDK",
             "group":"ios",
+            "path":"/ios/v3",
+            "version":"3.0.0-rc0",
+            "primary":true,
+            "logo":"/logos/apple-logo.svg",
+            "menu": [
+                {
+                    "name":"Getting Started",
+                    "path":"/ios/v3"
+                },
+                {
+                    "name":"Guides",
+                    "path":"/ios/v3/guides"
+                },
+                {
+                    "name":"Tutorials",
+                    "path":"/ios/v3/tutorials"
+                },
+                {
+                    "name":"Reference Docs",
+                    "path":"https://app.mapsindoors.com/mapsindoors/reference/ios/v3/index.html"
+                },
+                {
+                    "name":"Changelog",
+                    "path":"/ios/v3/changelog"
+                }
+            ]
+        },
+        {
+            "name":"iOS SDK",
+            "group":"ios",
             "path":"/ios/v2",
             "version":"2.1.8",
-            "primary":true,
+            "primary":false,
             "logo":"/logos/apple-logo.svg",
             "menu": [
                 {
@@ -83,32 +113,6 @@
                 {
                     "name":"Changelog",
                     "path":"/ios/v2/changelog"
-                }
-            ]
-        },
-        {
-            "name":"iOS SDK",
-            "group":"ios",
-            "path":"/ios/v1",
-            "version":"1.12.6",
-            "primary":false,
-            "logo":"/logos/apple-logo.svg",
-            "menu": [
-                {
-                    "name":"Getting Started",
-                    "path":"/ios/v1"
-                },
-                {
-                    "name":"Next Steps",
-                    "path":"/ios/v1/guide-part2"
-                },
-                {
-                    "name":"Reference Docs",
-                    "path":"https://app.mapsindoors.com/mapsindoors/reference/ios/index.html"
-                },
-                {
-                    "name":"Changelog",
-                    "path":"/ios/v1/changelog"
                 }
             ]
         },

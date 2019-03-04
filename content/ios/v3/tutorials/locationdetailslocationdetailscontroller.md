@@ -63,4 +63,4 @@ func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D)
 }
 ```
 
-[See the sample in LocationDetailsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Location Details/LocationDetailsController.swift)
+[See the sample in LocationDetailsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Details/LocationDetailsController.swift)

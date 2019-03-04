@@ -43,4 +43,4 @@ func didSelectLocation(location: MPLocation) {
 }
 ```
 
-[See the sample in SearchMapController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Search/SearchMapController.swift)
+[See the sample in SearchMapController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Search/SearchMapController.swift)

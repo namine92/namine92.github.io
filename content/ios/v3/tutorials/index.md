@@ -8,3 +8,4 @@ With these simple tutorials, each reflecting common use cases, you can get more 
 - [Create a Search Experience](searchmysearchcontroller)
 - [Showing a Blue Dot / User Location](showmylocationmypositionprovider)
 - [Create a custom Location Source](locationdatasourcespeoplelocationsdatasource)
+- [Work with grouped / clustered locations](clusteringclusteringcontroller)

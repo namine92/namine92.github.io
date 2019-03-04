@@ -45,4 +45,4 @@ override func viewDidDisappear(_ animated: Bool) {
 }
 ```
 
-[See the sample in LocationDataSourcesController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Location Data Sources/LocationDataSourcesController.swift)
+[See the sample in LocationDataSourcesController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Data Sources/LocationDataSourcesController.swift)

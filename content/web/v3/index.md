@@ -76,13 +76,9 @@ google.maps.event.addDomListener(window, 'load', init);
 A [showcase app is available on GitHub](https://github.com/MapsIndoors/Showcase-Web-App), free to use and adapt to your needs.
 
 ### To try it out right away:
-Make sure nodejs, npm and gulp is installed on your system
+Before you begin, make sure your development environment includes Node.js® and NPM package manager.
+
 Using a terminal/shell in the project folder, run the following commands:
 
-* npm install -g browser-sync
-* gulp build
-* browser-sync start --server
-* If on Windows and prompted, allow server to use your PC network
-* Open your browser at http://localhost:3000/app (or whatever port browser-sync chooses per default)
-
-
+* npm install
+* ng serve --o

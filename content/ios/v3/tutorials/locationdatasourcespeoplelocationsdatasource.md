@@ -48,13 +48,13 @@ func createPeople(_ type: String) {
         
         let locationUpdate = MPLocationUpdate.init(id: locId, from: self)
         
-        locationUpdate.setType(type)
-        locationUpdate.addPropertyValue("John Doe", forKey: MPLocationFieldName)
-        locationUpdate.setFloor(1)
+        locationUpdate.type = type
+        locationUpdate.addPropertyValue("John Doe #\(locId)", forKey: MPLocationFieldName)
+        locationUpdate.floor = 1
         let p = getRandomPoint()
         locationPoints.append(p)
         locationDirs.append(Double.random(in: 0 ..< 360))
-        locationUpdate.setPosition(p.getCoordinate())
+        locationUpdate.position = p.getCoordinate()
         locationUpdates.append(locationUpdate)
         
     }
@@ -72,7 +72,7 @@ func updatePositions() {
     for locId in 0 ..< numberOfPeople {
         let locationUpdate = locationUpdates[locId]
         let newPos = GMSGeometryOffset(locationPoints[locId].getCoordinate(), 0.5, locationDirs[locId])
-        locationUpdate.setPosition(newPos)
+        locationUpdate.position = newPos
         locationDirs[locId] = locationDirs[locId] + Double.random(in: -22 ..< 22)
         locationPoints[locId] = MPPoint.init(lat: newPos.latitude, lon: newPos.longitude)
         updatedLocations.append(locationUpdate.location())
@@ -106,19 +106,19 @@ convenience init(type:String) {
 ```
 Implement the MPLocationSource method `getAllLocations`. For this demo just return an empty array as each update will also contain the full list of locations.
 ```
-func getAllLocations() -> [MPLocation] {
+func getLocations() -> [MPLocation] {
     return []
 }
 ```
 Implement the MPLocationSource method `addLocationObserver`.
 ```
-func addLocationObserver(_ observer: MPLocationsObserver) {
+func add(_ observer: MPLocationsObserver) {
     observers.append(observer)
 }
 ```
 Implement the MPLocationSource method `removeLocationObserver`.
 ```
-func removeLocationObserver(_ observer: MPLocationsObserver) {
+func remove(_ observer: MPLocationsObserver) {
     observers = observers.filter({ (obsvr) -> Bool in
         return obsvr === observer
     })
@@ -126,16 +126,16 @@ func removeLocationObserver(_ observer: MPLocationsObserver) {
 ```
 Implement the MPLocationSource method `sourceStatus`.
 ```
-func sourceStatus() -> MPLocationSourceStatus {
+func status() -> MPLocationSourceStatus {
     return .available
 }
 ```
 Implement the MPLocationSource method `sourceIdentifier`.
 ```
-func sourceIdentifier() -> Int32 {
+func sourceId() -> Int32 {
     return 0;
 }
 ```
 In [Part 2](../locationdatasourceslocationdatasourcescontroller) we will create a view controller displaying a map that shows the mocked people locations on top of a MapsIndoors map.
 
-[See the sample in PeopleLocationsDataSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/develop/Location Data Sources/PeopleLocationsDataSource.swift)
+[See the sample in PeopleLocationsDataSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Data Sources/PeopleLocationsDataSource.swift)
