@@ -77,11 +77,7 @@ Constructor. Takes directions render options as required parameter.
 ```javascript
 var directionsRenderer = new mapsindoors.DirectionsRenderer(
 {
-   map: googleMap,               // The Google map on which to render
    mapsindoors: mapsIndoors,     // The MapsIndoors instance
-   suppressMarkers: boolean,     // Optional - If true, action/step point markers will not be rendered
-   directions: directionsObject, // Optional - the actual directions object containing the directions data
-   legIndex: number              // Optional - the part of the route which should render (0, 1, 2, n), defaults to 0. Highest index is directionsObject.legs.length - 1.
 }
 );
 ```
@@ -122,10 +118,9 @@ directionsRenderer.setStyle('default',
 Renders the route result using the applied render options. Used in conjunction with a DirectionsService, this is an example of displaying a route on the map.
 
 ```javascript
-var googleMap = new google.maps.Map(...);
 
 var directionsService = new mapsindoors.DirectionsService();
-var renderer = new mapsindoors.DirectionsRenderer({ map: googleMap });
+var renderer = new mapsindoors.DirectionsRenderer({ mapsIndoors: myMapsIndoors });
 
 directionsService.route(
    {

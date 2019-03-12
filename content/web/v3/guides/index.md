@@ -140,7 +140,6 @@ Constructor. Takes directions render options as required parameter.
 ```javascript
 var directionsRenderer = new mapsindoors.DirectionsRenderer(
 {
-   map: googleMap,               // The Google map on which to render
    mapsindoors: mapsIndoors,     // The MapsIndoors instance
 }
 );
@@ -179,10 +178,9 @@ directionsRenderer.setOptions(
 Renders the route result using the applied render options. Used in conjunction with a DirectionsService, this is an example of displaying a route on the map.
 
 ```javascript
-var googleMap = new google.maps.Map(...);
 
 var directionsService = new mapsindoors.DirectionsService();
-var renderer = new mapsindoors.DirectionsRenderer({ map: googleMap });
+var renderer = new mapsindoors.DirectionsRenderer({ mapsIndoors: myMapsIndoors });
 
 directionsService.getRoute(
    {
