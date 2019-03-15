@@ -133,7 +133,7 @@ Resets the map to the appearance defined by the provided display rules. Displaye
 mapsIndoors.reset()
 ```
 
-## Using the directionsRenderer
+## Using the Directions Renderer
 
 Constructor. Takes directions render options as required parameter.
 
@@ -144,21 +144,9 @@ var directionsRenderer = new mapsindoors.DirectionsRenderer(
 }
 );
 ```
-### Setting the style of the direction renderer
+### Setting the Options of the Directions Renderer
 
-Sets the directions rendering style. For twaeking style of route polylines we use the [Google Maps v3 API PolylineOptions](https://developers.google.com/maps/documentation/javascript/reference#PolylineOptions) format. The methods first parameter refers to a style type that can be either the travel mode for outdoor routes or the type of way for indoor routes. The possible style types include:
-
-* default – The default style, will be used for all non-specified styles.
-* driving – Style for driving travel mode.
-* walking – Style for walking travel mode.
-* transit – Style for transit travel mode.
-* bicycling – Style for transit travel mode.
-* footway – Style for regular indoor ways.
-* steps – Style for steps/stairs.
-* elevator – Style for elevators.
-* escalator – Style for elevators.
-* travellator – Style for travellators.
-* residential – Style for roads at a venue.
+Customizing style of route polylines is done using the `setOptions` method.  
 
 ```javascript
 var directionsRenderer = new mapsindoors.DirectionsRenderer();
@@ -173,6 +161,7 @@ directionsRenderer.setOptions(
 }
 );
 ```
+
 ### Getting a Route and Rendering it on a Map
 
 Renders the route result using the applied render options. Used in conjunction with a DirectionsService, this is an example of displaying a route on the map.
@@ -303,5 +292,38 @@ locations.getLocations().then(function(data) {
    locations.getLocationDetails(data[0].id).then(function(detailedData) {
       // Returns a full-detail location object
    });
+});
+```
+
+## Map Styles
+
+A MapsIndoors map may have multiple styles/layouts. This is how a mapStyle object is structured. 
+
+```javascript
+let mapStyle = {
+    folder: 'styleFolder', 
+    displayName: 'styleDisplayName' // Optional when created
+}
+```
+
+When a new instance of MapsIndoors is created, it is created with the google map as an argument. It is also possible to set the map style in the constructor.
+
+```javascript
+let mapsIndoors = new mapsindoors.MapsIndoors({
+    map: googleMap,
+    mapStyle: MapStyle
+});
+```
+
+It is also posible to set or get the map style at a later time, after MapsIndoors has been instantiated.
+
+```javascript
+google.maps.event.addListener(mapsIndoors, 'ready', function () {
+    /* Get all avalible styles. */
+    let styles = mapsIndoors.getMapStyles();
+    /* Set the first style in the list as the one to be shown on the map. */
+    mapsIndoors.setMapStyle(styles[0]);
+    /* Get the current map style. */
+    let style = mapsIndoors.getMapStyle();
 });
 ```
