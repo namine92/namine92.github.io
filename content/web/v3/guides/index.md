@@ -190,7 +190,7 @@ directionsService.getRoute(
    renderer.setRoute(result.routes[0]);
 });
 ```
-### Getting the location using queries
+### Getting the Location using Queries
 
 Get locations from MapsIndoors using a query object (optional). With no query parameter, all published locations will be fetched.
 
@@ -221,7 +221,7 @@ Clear the current route rendering.
 ```javascript
 directionsRenderer.clear();
 ```
-## Using the directionsService
+## Using the Directions Service
 
 Constructor. Instantiates a service that can be used for making route requests.
 
@@ -251,14 +251,14 @@ directionsService.route(
 });
 ```
 
-## Using the LocationService
+## Using the Location Service
 
 Constructor.
 
 ```javascript
 LocationsService()
 ```
-### Getting the categories
+### Getting the Categories
 
 Get the unique categories and their translation used by published locations. Typically, this can be used to build a menu for list or map filtering of locations.
 
@@ -269,19 +269,20 @@ locations.getCategories().then(function(categories) {
    // Returns localized category list with structure { office: "Office", ... } e.g. for english.
 });
 ```
-### Getting the types
+### Getting Icons from Location Types
 
 A set of location types is defined for every MapsIndoors solution. The current list of types can be retrieved like this:
 
 ```javascript
-var locations = new mapsindoors.LocationService();
+var solutionData = new mapsindoors.SolutionService();
 
-locations.getTypes().then(function(types) {
-   // returns array of types with format { name:string, icon:string }
+solutionData.getTypes().then(function(types) {
+   // returns array of types with format { name:string, displayRule: { icon:'https://icon.url' } }
+   console.log(types[0].displayRule.icon);
 });
 ```
 
-### Getting the location details
+### Getting the Location Details
 
 Get the full details object of a single location. Pass the MapsIndoors id string present in any location object at `location.id`.
 
