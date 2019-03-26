@@ -11,6 +11,14 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [2.2.0] 2019-03-22
+### Added
+- Now possible to set map style (layout) using `MPMapControl.mapStyle = MPMapStyle(string:"my-style")`. Only applies for data sets that has multiple defined styles.
+
+## [2.1.10] 2019-03-05
+### Fixed
+- Fixed an issue causing map graphics not to show after a synchronisation followed by an app kill
+
 ## [2.1.9] 2019-02-15
 ### Fixed
 - Fixed an occasional crash in MPVenueProvider, reported in [github](https://github.com/MapsIndoors/MapsIndoorsIOS/issues/5).

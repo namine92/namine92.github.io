@@ -3,7 +3,33 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 
 <!-- ## [Unreleased] -->
+## [3.1.2] - 2019-03-20
+### Changed
+- The SDK now selects the fastest backend server based on a latency test. 
+- A list of known backends is stored in localStorage for the SDK to choose from.
+  The list of known backends are updated automatically as part of the latency test.
 
+## [3.1.1] - 2019-03-14
+### Fixed
+- Fixed a crash caused by setting mapStyle via the MapsIndoors constructor.
+
+## [3.1.0] - 2019-03-13
+### Changed
+- It's now posible to set a displayRule for a list of location ids or types. `myMapsIndoors.setDisplayRule(["abc", "cde", "fgh"], { visible: false });`
+  
+### Added
+- Added the functions setMapStyle, getMapStyle and getMapStyles to MapsIndoors.
+  - setMapStyle() set a new indoor map style.
+  - getMapStyle() get the current style of the indoors map.
+  - getMapStyles() get a list of availeble indoor map styles.
+
+## [3.0.5] - 2019-02-27
+### Fixed
+- Optimized map performance by reducing the amount POIs 
+
+## [3.0.2] - 2019-02-19
+### Fixed
+- Support for IE 11
 
 ## [3.0.0] - 2018-10-23
 ### Changed
