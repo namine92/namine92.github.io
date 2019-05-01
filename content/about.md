@@ -17,13 +17,13 @@ MapsIndoors for Web will provide your users with browser-based wayfinding using 
 
 ### MapsIndoors for iOS
 
-Indoor navigation for iOS provides you with a seamless transition from outdoor to indoor navigation. Your users will be able to get navigation to anywhere – from any location outside and inside your facility. Interface your indoor map with an indoor positioning system and provide users with bluedot indoor navigation. Use their geolocation to send your users push-notifications.
+Indoor navigation for iOS provides you with a seamless transition from outdoor to indoor navigation. Your users will be able to get navigation to anywhere – from any location outside and inside your facility. Interface your indoor map with an indoor positioning system and provide users with bluedot indoor navigation.
 
 * Built on top of Google Maps SDK for iOS
 * Easy integration using CocoaPods
 * API Documentation in headers
 * Online documentation and getting-started guide
-* Cutting-edge MapsIndoors application source code for both phones, phablets and tablets
+* Cutting-edge MapsIndoors application source code for both phones and tablets
 
 ### MapsIndoors for Android
 
@@ -33,4 +33,4 @@ Like for iOS, indoor navigation for Android provides your users with a great ind
 * Easy integration using Gradle dependencies
 * AAR-Library ready to be included into your App
 * Online documentation and getting-started guide
-* Cutting-edge MapsIndoors application source code for both phones, phablets and tablets
+* Cutting-edge MapsIndoors application source code for both phones and tablets

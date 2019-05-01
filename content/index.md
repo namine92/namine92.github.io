@@ -25,7 +25,8 @@ Some Web Service APIs are needed also for the MapsIndoors SDK so make sure to en
 ### Get a MapsIndoors Content Key and API Key
 
 In order to include the mapsIndoors in your app you need a content key and possibly an API key that we provide to our customer so they can access their data, if you are not a customer you can use this content key `57e4e4992e74800ef8b69718` to follow this guide.
-You can find more information about how to get a solution ID and becoming a partner by visiting this [link](https://www.mapspeople.com/become-a-partner).
+
+In order to include MapsIndoors in your own app with your own content, you need to [contact MapsPeople](https://resources.mapspeople.com/contact-us) to get your building drawings processed and hosted in the system. You will receive a unique content API key to use when access has been granted. If you are exploring how this service can become part of your own product, you can read about [partnering with MapsPeople here](https://www.mapspeople.com/become-a-partner).
 
 ## Choose your platform
 
@@ -33,5 +34,5 @@ Now you have to choose the platform that you are working on to continue the step
 
 * [Web - getting started](/web/v3)
 * [Android - getting started](/android/v2)
-* [iOS - getting started](/ios/v2)
+* [iOS - getting started](/ios/v3)
 

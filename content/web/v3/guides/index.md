@@ -329,3 +329,6 @@ google.maps.event.addListener(mapsIndoors, 'ready', function () {
     let style = mapsIndoors.getMapStyle();
 });
 ```
+
+## Location Sources
+MapsIndoors can work with external data sources that is being registered programmatically. See this [introduction to Location Sources](../../introductions/location-sources).

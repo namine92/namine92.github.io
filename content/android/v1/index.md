@@ -195,3 +195,6 @@ myMapControl.addOnSnippetTappedListener(
 }
 );
 ```
+
+## Work with MapsIndoors SDK behind a Firewall
+If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).

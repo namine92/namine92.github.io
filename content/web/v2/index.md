@@ -256,3 +256,6 @@ Resets the map to the appearance defined by the provided display rules. Displaye
 ```javascript
 mapsIndoors.reset()
 ```
+
+## Work with MapsIndoors SDK behind a Firewall
+If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).

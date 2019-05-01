@@ -52,3 +52,5 @@ publishDir = "docs"
 	fractions = true
 	smartDashes = true
 	plainIDAnchors = true
+
+disableKinds = ["taxonomy", "taxonomyTerm"]

@@ -82,3 +82,6 @@ Using a terminal/shell in the project folder, run the following commands:
 
 * npm install
 * ng serve --o
+
+## Work with MapsIndoors SDK behind a Firewall
+If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).

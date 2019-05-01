@@ -133,3 +133,6 @@ preBuild.dependsOn fetchData
 ```
 
 Depending on the overall size of your MapsIndoors deployment, this may take some time, so during development you might want to comment out the script dependency.
+
+## Work with MapsIndoors SDK behind a Firewall
+If you need to work with MapsIndoors SDK behind a firewall, you might need to [white-list some IP-adresses](../../ip-whitelisting).
