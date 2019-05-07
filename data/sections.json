@@ -60,7 +60,7 @@
             "name":"iOS SDK",
             "group":"ios",
             "path":"/ios/v3",
-            "version":"3.0.0",
+            "version":"3.0.4",
             "primary":true,
             "logo":"/logos/apple-logo.svg",
             "menu": [

@@ -1,7 +1,7 @@
 echo "Updating changelog for IOS SDK V3"
 pushd .
 cd content/ios/v3
-git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git release/3.0.0 CHANGELOG.md | tar -x
+git archive --remote=git@git.rtx.mapspeople.com:MapsIndoors/SDK/MISDKIOS.git develop CHANGELOG.md | tar -x
 popd
 echo "Updating changelog for IOS SDK v2"
 pushd .

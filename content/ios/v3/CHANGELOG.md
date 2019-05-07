@@ -11,6 +11,29 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
+## [3.0.4] 2019-04-29
+### Fixed
+- Fixed an issue with directions only returning routes on ground floor.
+- Fixed issue with the directions service not resorting to offline even in case of cached route-networks.
+- Fixed an issue where would return more than expected results when perfect match(es) was found.
+
+## [3.0.3] 2019-04-11
+### Fixed
+- Fixed an issue changing MapsIndoors.positionProvider during the runtime of the app.
+
+## [3.0.2] 2019-04-08
+### Fixed
+- Fixed an issue where MPMapControl would not update it's current location.
+
+## [3.0.1] 2019-04-03
+### Added
+- MPMapControlDelegate now has a new method for notifying about which building is focused on the map  `- [MPMapControlDelegate focusedBuildingDidChange:(nullable MPLocation*)building]`
+- MPMapControlDelegate now has a new method for notifying position updates  `- [MPMapControlDelegate onPositionUpdate:(nonnull MPPositionResult*)positionResult]`
+### Changed
+- MPMapControl.currentPosition has been deprecated; use MapsIndoors.positionProvider.latestPositionResult to know current position.
+### Fixed
+Fixed an issue related to MPLocations using the default displayrule as well as their own icon.
+
 ## [3.0.0] 2019-03-04
 ### Added
 - Support for external location data sources using `[MapsIndoors registerLocationSources:sources]`
@@ -23,6 +46,14 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 
 ### Removed
 - Removed a number of deprecated methods that was introduced in V1
+
+## [2.2.0] 2019-03-22
+### Added
+- Now possible to set map style (layout) using `MPMapControl.mapStyle = MPMapStyle(string:"my-style")`. Only applies for data sets that has multiple defined styles.
+
+## [2.1.10] 2019-03-05
+### Fixed
+- Fixed an issue causing map graphics not to show after a synchronisation followed by an app kill
 
 ## [2.1.9] 2019-02-15
 ### Fixed
