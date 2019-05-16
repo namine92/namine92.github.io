@@ -1,8 +1,6 @@
 ---
-title: Creating your own Location Source - Part 1
+title: Creating your own Location Sources - Part 1
 ---
-
-> Note! This document describes a pre-release feature. We reserve the right to change this feature and the corresponding interfaces without further notice. Any mentioned SDK versions are not intended for production use.
 
 In this tutorial we will show how you can build a custom Location Source, representing locations of people. The people locations will be served from a mocked list in the source and displayed on a map in a view controller.
 
@@ -10,7 +8,7 @@ We will start by creating our implementation of a location source.
 
 Create a class `PeopleLocationsDataSource` that inherits from NSObject and implements `MPLocationSource`.
 ```
-class PeopleLocationsDataSource : NSObject, MPLocationSource {
+class PeopleLocationSource : NSObject, MPLocationSource {
 ```
 Add some member variables to `PeopleLocationsDataSource`.
 
@@ -136,6 +134,6 @@ func sourceId() -> Int32 {
     return 0;
 }
 ```
-In [Part 2](../locationdatasourceslocationdatasourcescontroller) we will create a view controller displaying a map that shows the mocked people locations on top of a MapsIndoors map.
+In [Part 2](../locationsourcesroomavailabilitysource) we will create a view controller displaying a map that shows the mocked people locations on top of a MapsIndoors map.
 
-[See the sample in PeopleLocationsDataSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Data Sources/PeopleLocationsDataSource.swift)
+[See the sample in PeopleLocationSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Sources/PeopleLocationSource.swift)

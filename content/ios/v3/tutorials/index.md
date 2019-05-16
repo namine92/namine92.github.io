@@ -7,5 +7,6 @@ With these simple tutorials, each reflecting common use cases, you can get more 
 - [Show Details for a Tapped Location](locationdetailslocationdetailscontroller)
 - [Create a Search Experience](searchmysearchcontroller)
 - [Showing a Blue Dot / User Location](showmylocationmypositionprovider)
-- [Create a custom Location Source](locationdatasourcespeoplelocationsdatasource)
+- [Advanced Directions](advanceddirectionsroutesegmentview)
+- [Create custom Location Sources](locationsourcespeoplelocationsource)
 - [Work with grouped / clustered locations](clusteringclusteringcontroller)

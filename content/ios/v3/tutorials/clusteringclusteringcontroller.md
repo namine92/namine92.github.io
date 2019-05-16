@@ -43,12 +43,12 @@ Define an objective-c method `toggleClustering` that will receive events from yo
 * Make button reflect the state
 ```
 @objc func toggleClustering() {
-    if MapsIndoors.enableMarkerOverlapResolutionByGrouping {
-        MapsIndoors.enableMarkerOverlapResolutionByGrouping = false
+    if MPMapControl.locationClusteringEnabled {
+        MPMapControl.locationClusteringEnabled = false
     } else {
-        MapsIndoors.enableMarkerOverlapResolutionByGrouping = true
+        MPMapControl.locationClusteringEnabled = true
     }
-    clusteringButton.isSelected = MapsIndoors.enableMarkerOverlapResolutionByGrouping
+    clusteringButton.isSelected = MPMapControl.locationClusteringEnabled
 }
 ```
 Define the delegate method `didTap` that will receive tap events from a cluster marker
