@@ -134,6 +134,7 @@ mapsindoors.LocationService.getLocations(
          q: "lounge",         // Optional - Search for matches in location name or aliases
          building: "34",      // Optional - Fetch from specific building, using the administrative id of the building
          venue: "VenueA",     // Optional - Fetch from specific venue, using name of venue
+         categories: ["MEETINGROOM,LOUNGEAREAS"]    // Optional - Fetch from specific categories, using the category keys
          floor: 1,                     // Optional - Fetch from 1st floor only
          take: 10,                     // Optional - Fetch only 10 locations
          skip: 10,                     // Optional - Skip first 10 in result
@@ -308,7 +309,7 @@ locations.getLocations(
 Clear the current route rendering.
 
 ```javascript
-directionsRenderer.clear();
+directionsRenderer.setRoute(null);
 ```
 ## Using the directionsService
 
