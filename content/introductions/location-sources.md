@@ -1,12 +1,8 @@
 ---
-title: Location Data Sources
+title: Location Sources in MapsIndoors
 ---
 
-> Note! This document describes a pre-release feature. We reserve the right to change this feature and the corresponding interfaces without further notice. Any mentioned SDK versions are not intended for production use.
-
-At MapsPeople we are in the process of shaping up a new feature in MapsIndoors SDK for Android and iOS called Location Data Sources. Basically we are making it possible to register your own custom data source, adhering to a very simple interface.
-
-The Location Data Sources feature is expected to be released medio Q1 2019. If you are interested in evaluating this feature in a pre-release stage, please read on...
+Location Sources is a new feature introduced in version 3 of MapsIndoors SDK for Android and iOS. Basically we are making it possible to register your own custom location data source, adhering to a very simple interface.
 
 ## The Concepts
 The central concepts in this feature are Location Sources and Location Observers, and they are best described in the following illustration:
