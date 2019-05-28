@@ -167,6 +167,20 @@
                     "path":"/web/v2/changelog"
                 }
             ]
+        },
+        {
+            "name":"Data API",
+            "group":"dataapi",
+            "path":"/dataapi/v1",
+            "version":"Version 1",
+            "primary":true,
+            "logo":"/logos/dataapi-logo.svg",
+            "menu": [
+                {
+                    "name":"Introduction",
+                    "path":"/web/v1"
+                }
+            ]
         }
     ]
 }
