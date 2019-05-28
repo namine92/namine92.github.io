@@ -4,15 +4,12 @@ Changelog for MapsIndoors SDK for JavaScript. This document structure is based o
 
 <!-- ## [Unreleased] -->
 
-## [3.2.0] - 2019-04-29
+## [3.2.1] - 2019-05-24
 ### Added
-- Added the ability to change the api key at runtime via `mapsindoors.setApiKey(key);`
+- Added the ability to change the api key at runtime via `mapsindoors.MapsIndoors.setApiKey(key);`
 - Added the functions to get and set the language at runtime:
-  - `mapsindoors.setLanguage(language);`
-  - `mapsindoors.getLanguage();`
-
-
-## [3.1.3] - 2019-03-26
+  - `mapsindoors.MapsIndoors.setLanguage(language);`
+  - `mapsindoors.MapsIndoors.getLanguage();`
 ### Changed
 - The SDK now selects the fastest backend server based on a latency test. 
 - A list of known backends is stored in localStorage for the SDK to choose from.
