@@ -195,4 +195,4 @@ extension AdvancedDirectionsController : MySearchControllerDelegate {
 }
 ```
 
-[See the sample in AdvancedDirectionsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Advanced Directions/AdvancedDirectionsController.swift)
+[See the sample in AdvancedDirectionsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced Directions/AdvancedDirectionsController.swift)

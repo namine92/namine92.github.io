@@ -24,4 +24,4 @@ locations.getLocationsUsing(queryObj) { (locationData, error) in
 }
 ```
 
-[See the sample in ShowMultipleLocationsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show Multiple Locations/ShowMultipleLocationsController.swift)
+[See the sample in ShowMultipleLocationsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show Multiple Locations/ShowMultipleLocationsController.swift)

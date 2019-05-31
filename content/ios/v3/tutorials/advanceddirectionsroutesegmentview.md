@@ -170,4 +170,4 @@ extension String {
 ```
 In [the next part we will create a controller](../advanceddirectionsroutesegmentscontroller) that displays the above generated instructions.
 
-[See the sample in RouteSegmentView.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Advanced Directions/RouteSegmentView.swift)
+[See the sample in RouteSegmentView.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced Directions/RouteSegmentView.swift)

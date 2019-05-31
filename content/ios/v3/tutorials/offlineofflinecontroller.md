@@ -41,4 +41,4 @@ Define an objective-c method `syncContent` that will receive events from your bu
 
 ```
 
-[See the sample in OfflineController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Offline/OfflineController.swift)
+[See the sample in OfflineController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Offline/OfflineController.swift)

@@ -38,4 +38,4 @@ self.present(alertController, animated: true, completion: nil)
 
 ```
 
-[See the sample in MapStylesController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Map Styles/MapStylesController.swift)
+[See the sample in MapStylesController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Map Styles/MapStylesController.swift)

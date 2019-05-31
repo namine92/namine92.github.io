@@ -118,4 +118,4 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 ```
  In [Part 2](../searchsearchmapcontroller) we will create the map view controller that displays the search selection. 
 
-[See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Search/MySearchController.swift)
+[See the sample in MySearchController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Search/MySearchController.swift)

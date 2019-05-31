@@ -24,7 +24,13 @@ self.view = self.map
 self.map?.camera = .camera(withLatitude: 57.057964, longitude: 9.9504112, zoom: 20)
 self.mapControl = MPMapControl.init(map: self.map!)
 ```
-Inside `viewDidLoad`
+Inside `viewDidLoad`, optionally add a special icon for the user location
+```
+let myLocationRule = MPLocationDisplayRule.init(name: "my-location", andIcon: UIImage.init(named: "MyLocationDirection"), andZoomLevelOn: 0)
+myLocationRule?.iconSize = CGSize(width: 30, height: 30)
+self.mapControl?.add(myLocationRule!)
+```
+Inside `viewDidLoad`, finally
 
 * Tell mapControl to show the users location
 * Assign your position provider `MyPositionProvider` to `MapsIndoors.positionProvider`
@@ -35,4 +41,4 @@ MapsIndoors.positionProvider = MyPositionProvider()
 MapsIndoors.positionProvider.startPositioning(nil)
 ```
 
-[See the sample in ShowMyLocationController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show My Location/ShowMyLocationController.swift)
+[See the sample in ShowMyLocationController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show My Location/ShowMyLocationController.swift)

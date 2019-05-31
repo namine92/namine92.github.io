@@ -109,4 +109,4 @@ extension RouteSegmentsController : UITableViewDelegate {
 ```
 In [the next part we will create a controller](../advanceddirectionsadvanceddirectionscontroller) we will create a controller that renders a map and utilizes interaction between a route rendered on the map and the selected instructions.
 
-[See the sample in RouteSegmentsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Advanced Directions/RouteSegmentsController.swift)
+[See the sample in RouteSegmentsController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Advanced Directions/RouteSegmentsController.swift)

@@ -25,11 +25,14 @@ var latestPositionResult: MPPositionResult?
 var preferAlwaysLocationPermission: Bool = false
 var locationServicesActive: Bool = false
 var providerType: MPPositionProviderType = .GPS_POSITION_PROVIDER
+var heading:Double = 0
 ```
 Create a method called `updatePosition`. This will be our "loop" constantly posting a new position to the delegate.
 
 * Check if the provider has a running state
 * Assign a new `MPPositionResult` to `latestPositionResult`
+* Assign a new position point
+* Optionally specify that heading is available and set a heading
 * Notify the delegate by calling `onPositionUpdate` passing the new position as argument
 * Schedule a new delayed call of this method
 ```
@@ -38,6 +41,9 @@ private func updatePosition() {
         latestPositionResult = MPPositionResult.init()
         latestPositionResult?.geometry = MPPoint.init(lat: 57.057964, lon: 9.9504112)
         latestPositionResult?.provider = self
+        latestPositionResult?.headingAvailable = true
+        heading = (heading + 10).truncatingRemainder(dividingBy: 360)
+        latestPositionResult?.setHeadingDegrees(heading)
         
         if let delegate = self.delegate, let latestPositionResult = self.latestPositionResult {
             delegate.onPositionUpdate(latestPositionResult)
@@ -90,4 +96,4 @@ func isRunning() -> Bool {
 ```
 In [Part 2](../showmylocationshowmylocationcontroller) we will create the map view controller that displays the blue dot.
 
-[See the sample in MyPositionProvider.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show My Location/MyPositionProvider.swift)
+[See the sample in MyPositionProvider.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show My Location/MyPositionProvider.swift)

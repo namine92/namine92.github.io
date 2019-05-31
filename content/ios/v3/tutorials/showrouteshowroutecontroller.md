@@ -73,4 +73,4 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
 }
 ```
 
-[See the sample in ShowRouteController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show Route/ShowRouteController.swift)
+[See the sample in ShowRouteController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show Route/ShowRouteController.swift)

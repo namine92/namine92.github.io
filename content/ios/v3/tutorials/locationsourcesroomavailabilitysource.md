@@ -112,6 +112,6 @@ func onStatusChange(_ status: MPLocationSourceStatus, source: MPLocationSource) 
     }
 }
 ```
-In [Part 3](../locationsourceslocationsourcesmapcontroller) we will create a view controller that shows the people and room locations on top of a MapsIndoors map.
+In [Part 3](../locationsourceslocationsourcescontroller) we will create a view controller that shows the people and room locations on top of a MapsIndoors map.
 
-[See the sample in RoomAvailabilitySource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Sources/RoomAvailabilitySource.swift)
+[See the sample in RoomAvailabilitySource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location Sources/RoomAvailabilitySource.swift)

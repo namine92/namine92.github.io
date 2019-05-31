@@ -104,4 +104,4 @@ if img == nil {
 return true
 ```
 
-[See the sample in ClusteringController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Clustering/ClusteringController.swift)
+[See the sample in ClusteringController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Clustering/ClusteringController.swift)

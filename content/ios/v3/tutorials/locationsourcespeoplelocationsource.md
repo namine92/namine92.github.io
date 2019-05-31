@@ -136,4 +136,4 @@ func sourceId() -> Int32 {
 ```
 In [Part 2](../locationsourcesroomavailabilitysource) we will create a view controller displaying a map that shows the mocked people locations on top of a MapsIndoors map.
 
-[See the sample in PeopleLocationSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Location Sources/PeopleLocationSource.swift)
+[See the sample in PeopleLocationSource.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Location Sources/PeopleLocationSource.swift)

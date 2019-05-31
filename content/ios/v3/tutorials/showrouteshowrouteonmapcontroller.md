@@ -60,4 +60,4 @@ func floorDidChange(_ floor: NSNumber) {
 ```
  In [Part 2](searchsearchmapcontroller) we will create the map view controller that displays the blue dot. 
 
-[See the sample in ShowRouteOnMapController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS-Demo-Samples/blob/master/Show Route/ShowRouteOnMapController.swift)
+[See the sample in ShowRouteOnMapController.swift](https://github.com/MapsIndoors/MapsIndoorsIOS/blob/master/Example/DemoSamples/Show Route/ShowRouteOnMapController.swift)
