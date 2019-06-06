@@ -11,10 +11,18 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Removed
 -->
 
-## [3.1.0] 2019-04-16
+## [3.1.0] 2019-06-04
 ### Added
 - Added a `MPGeometryHelper` class
 - Added a way to get polygons for locations using `MPGeometryHelper.polygonsForLocation(location:MPLocation)`
+- Updated Google Maps dependency to version 3.1.0
+- Optimizing outdoor/indoor directions. Filters entry points by new travel mode flag in SDK before doing calculations.
+- Now possible to set map style (layout) using `MPMapControl.mapStyle = MPMapStyle(string:"my-style")`. Only applies for data sets that has multiple defined styles.
+### Fixed
+- Fixed map markers being anchored at the bottom of a square icon, not the center.
+- Fixed a race condition in the initial data fetch causing locations search results to be initially empty.
+- Fixed error causing locations to show across all Floors when displaying as search result.
+- Fixed tapping on Information Window does not center view based on selected location. 
 
 ## [3.0.4] 2019-04-29
 ### Fixed
@@ -38,7 +46,8 @@ Changelog for MapsIndoors for iOS. This document structure is based on [Keep a C
 ### Changed
 - MPMapControl.currentPosition has been deprecated; use MapsIndoors.positionProvider.latestPositionResult to know current position.
 ### Fixed
-Fixed an issue related to MPLocations using the default displayrule as well as their own icon.
+- Fixed an issue related to MPLocations using the default displayrule as well as their own icon.
+- Fixed an issue causing MPLocationUpdate/MPLocation to always set floor index to zero on updates.
 
 ## [3.0.0] 2019-03-04
 ### Added
