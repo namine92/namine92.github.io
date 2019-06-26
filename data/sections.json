@@ -63,7 +63,7 @@
             "name":"iOS SDK",
             "group":"ios",
             "path":"/ios/v3",
-            "version":"3.1.0",
+            "version":"3.1.1",
             "primary":true,
             "logo":"/logos/apple-logo.svg",
             "menu": [
@@ -137,7 +137,7 @@
                 },
                 {
                     "name":"Reference Docs",
-                    "path":"/web/v3/reference"
+                    "path":"https://app.mapsindoors.com/mapsindoors/js/sdk/docs/v3.2.1/index.html"
                 },
                 {
                     "name":"Changelog",
