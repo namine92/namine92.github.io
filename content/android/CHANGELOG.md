@@ -14,6 +14,50 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
+## [3.1.1] - 2019-05-27
+
+### Fixed
+
+- Fixed some issues related to the deinitialization of MapControl and MapsIndoors (class)
+
+## [3.1.0] - 2019-05-21
+
+### Added
+
+- Support for runtime (indoor tiles) map-style switching. Related methods added:
+  - `Venue.getMapStyles()`: Gets a list of available map styles. Note that all venues share the map styles
+  - `Venue.getDefaultMapStyle()`: Gets the default map style used by the SDK.
+  - `Venue.isMapStyleValid( MapStyle )`: Checks the validity of the given map style
+  - `MapControl.getMapStyles()`: Gets a list of available map styles. Note that all venues share the map styles
+  - `MapControl.getMapStyle()`:  Gets the current map style set with `MapControl.setMapStyle( MapStyle )`
+  - `MapControl.setMapStyle( MapStyle )`: Sets the given map style as the current one. It can be invoked before or after `MapControl.init()`
+- Hability to change a Display Rule visibility at runtime. Related methods:
+  - `MapControl.getDisplayRules()`: Returns the aggregated display rules
+  - `MapControl.getDisplayRule( type )`: Returns the display rule with the given name, if any found
+  - `LocationDisplayRule.setVisible( show )`: Sets this Location Display Rule to be visible (based on the zoom on/off values) or not (marker icon not shown)
+- MPLocation now exposes its Geometry by using:
+  - `MPLocation.getGeometry()`: Retrieves the Geometry of an MPLocation (Point, PolygonGeometry, etc.)
+  - `MPLocation.getGeometryType()`: Returns the Geometry type as a in integer value (Geometry.TYPE_POINT, (Geometry.TYPE_POLYGON, etc.)
+  - `MPLocation.setGeometry( polygonGeometry )`: Sets the given PolygonGeometry as a location's Geometry
+  - `MPLocation.setLocationType( locationType )`: Sets the location's type (poi, area, or room)
+- Location data status listener:
+  - In version 3, POI data (Locations) loading is not in sync with other data such as buildings, venues, etc. Both `MapsIndoors.synchronizeContent()` and `MapControl.init()` callbacks will be invoked once all but Location data is ready to consume. We've added an separate method that sets a listener for Location data only (`MapsIndoors.addLocationSourceOnStatusChangedListener()`).
+
+### Changed
+
+- Clustering:
+  - `MapControl.setLocationClusteringEnabled( enable )` can be only invoked **BEFORE** `MapControl.init()`; doing so afterwards will throw an exception (if `dbglog.useDebug()` is set to `true`)
+- Updated the network layer so in case of network errors, will serve cached data when/where possible
+
+### Deprecated
+
+- `Venue.getStyles()`: Use `Venue.getMapStyles()` instead
+- `Venue.getDefaultStyle()`: Use `Venue.getDefaultMapStyle()` instead
+
+### Fixed
+
+- Better handling of broken custom/advanced icon links.
+
 ## [2.0.3] - 2018-06-??
 
 ### Added
