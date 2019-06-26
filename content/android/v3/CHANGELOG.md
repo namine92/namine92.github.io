@@ -1,5 +1,8 @@
-# Changelog
+---
 
+title: Changelog
+
+---
 Changelog for the MapsIndoors Android SDK. This document structure is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!--
@@ -11,104 +14,65 @@ Changelog for the MapsIndoors Android SDK. This document structure is based on [
 ### Security     in case of vulnerabilities.
 -->
 
-## [2.0.7] - 2018-09-05
-
-### Added
-
-- `MapControl.setDisplayRuleDefaultIconSize()`: Overwrites the display rules default icon size. Applies only to those display rules that don't specify the size.
-- `LocationDisplayRule.Builder.setVectorDrawableIcon(  vectorDrawableResId  )`: Sets the icon using a `VectorDrawable` at the default size (either the current base - 20dp or the one set with `MapControl.setDisplayRuleDefaultIconSize()`)
-- Exposed `PositionIndicator.USER_POSITION_DISPLAY_RULE_NAME`
-
-## [2.0.6] - 2018-08-31
-
-### Added
-
-- `LocationDisplayRule.Builder.setLabel()`.
-- `MapControl.refreshMap()`: Triggers a refresh on the visible part of the map (POIs, etc.).
-
-### Changed
-
-- Moved all classes under the `com.mapsindoors.mapssdk.models` package up to `com.mapsindoors.mapssdk`.
-- `DisplayRule` fields are now public for internal reasons. To read their values, please use the provided getters.
-- Made `LocationDisplayRule.setZoomLevelOn()` and `LocationDisplayRule.setZoomLevelOff()` package private.
-
-- Proguard rules:
-```
-    -keep interface com.mapsindoors.mapssdk.** { *; }
-    -keepclassmembers class * implements com.mapsindoors.mapssdk.MIModelBase { \<fields>; }
-```
-
-### Deprecated
-
-- `LocationDisplayRule.Builder.setPoiTypeDisplayRuleLabel()`: Use `LocationDisplayRule.Builder.setLabel()` instead.
-
-### Removed
-
-- `BitmapLoader` which was already replaced by `MIImageProvider`
-
-## [2.0.5] - 2018-08-27
-
-### Added
-
-- `Mapcontrol.setGoogleMap( GoogleMap, View )`: Sets the GoogleMap object and its parent view. Use it along the basic constructor (`MapControl( Context )`)
-
-### Changed
-
-- Annotated `MapControl.selectFloor()` as to be run on the UIThread
-- The user's location marker (aka blue dot) will fade 50% when the current floor the user is at is different than the one highlighted in the floor selector
-
-### Deprecated
-
-- `LocationQuery.getFloor()`, `LocationQuery.setFloor()`, `LocationQuery.Builder.setFloor()`: Use the floor index getters/setters instead
-- `Mapcontrol.MapControl( Context, SupportMapFragment, GoogleMap )`: Use `MapControl( Context )` together with `MapControl.setGoogleMap( GoogleMap, View )`
-- `Mapcontrol.setGoogleMap( GoogleMap, SupportMapFragment )`, `Mapcontrol.setGoogleMap( GoogleMap, MapView )`: Use `MapControl.setGoogleMap( GoogleMap, View )` instead
-
-## [2.0.4] - 2018-07-26
-
-### Added
-
-- `MapsIndoors.getMessages()`: Gets all the localized messages (beacon related) for the current solution
-- `MapsIndoors.synchronizeMessages()`: Will pull message data from MapsIndoors backend servers
-- `Venue.getGeometry()`: added missing getter
-
-### Changed
-
-- `MapControl.selectFloor()`: added validation of the given parameter (floor Z index). It will now throw `IllegalArgumentException` (if `dbglog.useDebug( true )`) if an invalid floor Z index was used.
+## [3.1.1] - 2019-05-27
 
 ### Fixed
 
-- `MapControl.displaySearchResults()` did show all POIs on the current floor shown regardless their own
-- MapsPeople watermark not keeping the same padding on both portrait and landscape modes
+- Fixed some issues related to the deinitialization of MapControl and MapsIndoors (class)
 
-## [2.0.3] - 2018-07-11
+## [3.1.0] - 2019-05-21
+
+### Added
+
+- Support for runtime (indoor tiles) map-style switching. Related methods added:
+  - `Venue.getMapStyles()`: Gets a list of available map styles. Note that all venues share the map styles
+  - `Venue.getDefaultMapStyle()`: Gets the default map style used by the SDK.
+  - `Venue.isMapStyleValid( MapStyle )`: Checks the validity of the given map style
+  - `MapControl.getMapStyles()`: Gets a list of available map styles. Note that all venues share the map styles
+  - `MapControl.getMapStyle()`:  Gets the current map style set with `MapControl.setMapStyle( MapStyle )`
+  - `MapControl.setMapStyle( MapStyle )`: Sets the given map style as the current one. It can be invoked before or after `MapControl.init()`
+- Hability to change a Display Rule visibility at runtime. Related methods:
+  - `MapControl.getDisplayRules()`: Returns the aggregated display rules
+  - `MapControl.getDisplayRule( type )`: Returns the display rule with the given name, if any found
+  - `LocationDisplayRule.setVisible( show )`: Sets this Location Display Rule to be visible (based on the zoom on/off values) or not (marker icon not shown)
+- MPLocation now exposes its Geometry by using:
+  - `MPLocation.getGeometry()`: Retrieves the Geometry of an MPLocation (Point, PolygonGeometry, etc.)
+  - `MPLocation.getGeometryType()`: Returns the Geometry type as a in integer value (Geometry.TYPE_POINT, (Geometry.TYPE_POLYGON, etc.)
+  - `MPLocation.setGeometry( polygonGeometry )`: Sets the given PolygonGeometry as a location's Geometry
+  - `MPLocation.setLocationType( locationType )`: Sets the location's type (poi, area, or room)
+- Location data status listener:
+  - In version 3, POI data (Locations) loading is not in sync with other data such as buildings, venues, etc. Both `MapsIndoors.synchronizeContent()` and `MapControl.init()` callbacks will be invoked once all but Location data is ready to consume. We've added an separate method that sets a listener for Location data only (`MapsIndoors.addLocationSourceOnStatusChangedListener()`).
+
+### Changed
+
+- Clustering:
+  - `MapControl.setLocationClusteringEnabled( enable )` can be only invoked **BEFORE** `MapControl.init()`; doing so afterwards will throw an exception (if `dbglog.useDebug()` is set to `true`)
+- Updated the network layer so in case of network errors, will serve cached data when/where possible
+
+### Deprecated
+
+- `Venue.getStyles()`: Use `Venue.getMapStyles()` instead
+- `Venue.getDefaultStyle()`: Use `Venue.getDefaultMapStyle()` instead
+
+### Fixed
+
+- Better handling of broken custom/advanced icon links.
+
+## [2.0.3] - 2018-06-??
 
 ### Added
 
 - `MapsIndoors.getAvailableLanguages()` returns a list of the solution's available languages or just `null` if data isn't available
 - `MIConnectivityUtils.isOnline()` replaces `UrlLoader.isOnline()`
 - `MapControl.setOnMarkerInfoWindowLongClickListener()`
-- `LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId )`
-- `LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId, with, height )`
-- `LocationDisplayRule.Builder.setVectorDrawableIcon( bitmapDrawableResId, with, height )`
-- `LocationDisplayRule.Builder.setIconSize( size )`
-- `MapControl.setUserLocationIconFromDisplayRule( locationDisplayRule )`
 
 ### Changed
 
 - `MapsIndoors.getDefaultLanguage()` will return now the solution's default language instead of the library's fallback one. If there is no data available yet, this method will now return `null`
-- `LocationDisplayRule.Builder.setIconURL( iconURL )` is now an "internal" method and should not be used. Please use any of the other ways to set display rule icon
 
 ### Deprecated
 
 - `UrlLoader.isOnline()`. Use `MIConnectivityUtils.isOnline()` instead
-- `LocationDisplayRule.Builder.setIcon( bitmapDrawableResId )`. Use `LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId )` or `LocationDisplayRule.Builder.setBitmapDrawableIcon( bitmapDrawableResId, with, height )` instead
-- `LocationDisplayRule.Builder.setIcon( vectorDrawableResId, with, height )`. Use `LocationDisplayRule.Builder.setVectorDrawableIcon( vectorDrawableResId, with, height )` instead
-- `LocationDisplayRule.Builder.setPOISize( size )`. Use `LocationDisplayRule.Builder.setIconSize( size )` instead
-- `MapControl.setUserLocationIcon( bitmapDrawableResId )` and `MapControl.setUserLocationIcon( vectorDrawableResId, color, width, height )`. Use `MapControl.setUserLocationIconFromDisplayRule( locationDisplayRule )` instead
-
-### Fixed
-
-- Custom display rules set on locations now working
 
 ## [2.0.2] - 2018-06-20
 
