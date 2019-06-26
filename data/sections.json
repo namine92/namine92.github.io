@@ -1,11 +1,40 @@
 {
     "data":[
-        {
+      {
+          "name":"Android SDK",
+          "group":"android",
+          "path":"/android/v3",
+          "version":"3.1.1",
+          "primary":true,
+          "logo":"/logos/android-logo.svg",
+          "menu": [
+              {
+                  "name":"Getting Started",
+                  "path":"/android/v3"
+              },
+              {
+                  "name":"Guides",
+                  "path":"/android/v3/guides"
+              },
+              {
+                  "name":"Tutorials",
+                  "path":"/android/v3/tutorials"
+              },
+              {
+                  "name":"Reference Docs",
+                  "path":"https://app.mapsindoors.com/mapsindoors/reference/android/v3/index.html"
+              },
+              {
+                  "name":"Changelog",
+                  "path":"/android/v3/changelog"
+              }
+          ]
+      },{
             "name":"Android SDK",
             "group":"android",
             "path":"/android/v2",
             "version":"2.0.8",
-            "primary":true, 
+            "primary":true,
             "logo":"/logos/android-logo.svg",
             "menu": [
                 {
@@ -27,32 +56,6 @@
                 {
                     "name":"Changelog",
                     "path":"/android/v2/changelog"
-                }
-            ]
-        },
-        {
-            "name":"Android SDK",
-            "group":"android",
-            "path":"/android/v1",
-            "version":"1.8.8",
-            "primary":false, 
-            "logo":"/logos/android-logo.svg",
-            "menu": [
-                {
-                    "name":"Getting Started",
-                    "path":"/android/v1"
-                },
-                {
-                    "name":"Next Steps",
-                    "path":"/android/v1/guide-part2"
-                },
-                {
-                    "name":"Reference Docs",
-                    "path":"https://app.mapsindoors.com/mapsindoors/reference/android/index.html"
-                },
-                {
-                    "name":"Changelog",
-                    "path":"/android/v1/changelog"
                 }
             ]
         },
