@@ -73,7 +73,7 @@ google.maps.event.addDomListener(window, 'load', init);
 
 ## Trying the Showcase Web App
 
-A [showcase app is available on GitHub](https://github.com/MapsIndoors/Showcase-Web-App), free to use and adapt to your needs.
+A [showcase app is available on GitHub](https://github.com/MapsIndoors/MapsIndoorsWeb, free to use and adapt to your needs.
 
 ### To try it out right away:
 Before you begin, make sure your development environment includes Node.js® and NPM package manager.
