@@ -1,4 +1,4 @@
-baseurl = "https://mapsindoors.github.io/"
+baseurl = "https://namine92.github.io/"
 languageCode = "en-us"
 title = "Indoor Navigation Built with Google Maps"
 theme = "hugo-material-docs"
@@ -16,7 +16,7 @@ publishDir = "docs"
 
 	# Repository
 	provider = "GitHub"
-	repo_url = "https://github.com/MapsIndoors/"
+	repo_url = "https://github.com/namine92"
 
 	version = "1.0"
 	logo = "images/logo.png"

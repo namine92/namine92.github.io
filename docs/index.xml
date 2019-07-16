@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Indoor Navigation Built with Google Maps</title>
+    <link>https://mapsindoors.github.io/</link>
+    <description>Recent content on Indoor Navigation Built with Google Maps</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://mapsindoors.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Indoor Navigation Built with Google Maps</title>
+      <link>https://mapsindoors.github.io/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mapsindoors.github.io/index.html</guid>
+      <description>Welcome to the developer site of MapsIndoors by MapsPeople. You can integrate MapsIndoors into apps, web solutions and/or information kiosks using the MapsIndoors SDK. Get your hands dirty by digging into our guides, code snippets and reference material for the MapsIndoors navigation platform. The documentation and SDKs for both Web, iOS and Android are all available on this site. We strive to give you everything you need to know about how to setup an indoor navigation solution.</description>
+    </item>
+    
+  </channel>
+</rss>
