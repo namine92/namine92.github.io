@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import NavBar from './headerComponent/NavBar';
 import Footer from './footerComponent/Footer';
+
 const App = () => (
   <BrowserRouter>
     <div>
@@ -14,4 +15,5 @@ const App = () => (
     </div>
   </BrowserRouter>
 );
+
 export default App;

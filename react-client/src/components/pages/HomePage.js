@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 const HomePage = () => {
   const [count, setCount] = useState(0);
   return (
@@ -18,4 +19,5 @@ const HomePage = () => {
     </div>
   );
 }
+
 export default HomePage;

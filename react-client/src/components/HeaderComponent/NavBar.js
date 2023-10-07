@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 const NavBar = () => (
   <header>
     <ul id="headerButtons">
@@ -8,4 +9,5 @@ const NavBar = () => (
     </ul>
   </header>
 );
+
 export default NavBar;

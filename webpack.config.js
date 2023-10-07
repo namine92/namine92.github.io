@@ -2,6 +2,7 @@ const path = require('path');
 const SRC_DIR = path.join(__dirname, '/react-client/src');
 const DIST_DIR = path.join(__dirname, '/react-client/dist');
 const webpack = require('webpack');
+
 module.exports = {
   entry: `${SRC_DIR}/index.js`,
   output: {
@@ -42,4 +43,5 @@ module.exports = {
       'process.env.NODE_ENV' : JSON.stringify('production')
     }),
   ],
+  mode: 'production'
 };
